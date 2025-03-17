@@ -1,14 +1,15 @@
-export type twosomeColors =
-  | "#d50037"
-  | "#707070"
-  | "#000"
-  | "#fff"
-  | "#f5ce3e"
-  | "#777"
-  | "#999"
-  | "#333";
+export type TwosomeColorNames =
+  | "red"
+  | "gray"
+  | "black"
+  | "white"
+  | "yellow"
+  | "grayTwo"
+  | "grayTh"
+  | "blackTwo"
+  | "grayFor";
 
-export type twosomeFontSize =
+export type TwosomeFontSize =
   | "56px"
   | "24px"
   | "16px"
@@ -17,7 +18,18 @@ export type twosomeFontSize =
   | "14px"
   | "12px";
 
-export type TwosomeColorKey = `color${twosomeColors}`;
+export type TwosomeColorKey = `color-${TwosomeColorNames}`;
 export type HexColor = `#${string}`;
+export type TwosomeFontKey = `fontSize-${TwosomeFontSize}`;
 
-export type TwosomeFontKey = `color${twosomeFontSize}`;
+export const kiaAllColors: { [key in TwosomeColorKey]: HexColor } = {
+  "color-red": "#d50037",
+  "color-gray": "#707070",
+  "color-black": "#000",
+  "color-white": "#fff",
+  "color-yellow": "#f5ce3e",
+  "color-grayTwo": "#777",
+  "color-grayTh": "#999",
+  "color-blackTwo": "#333",
+  "color-grayFor": "#f5f5f5",
+};
