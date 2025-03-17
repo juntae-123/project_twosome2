@@ -22,7 +22,7 @@ export type TwosomeColorKey = `color-${TwosomeColorNames}`;
 export type HexColor = `#${string}`;
 export type TwosomeFontKey = `fontSize-${TwosomeFontSize}`;
 
-export const kiaAllColors: { [key in TwosomeColorKey]: HexColor } = {
+export const TwosomeColors: { [key in TwosomeColorKey]: HexColor } = {
   "color-red": "#d50037",
   "color-gray": "#707070",
   "color-black": "#000",
@@ -32,4 +32,14 @@ export const kiaAllColors: { [key in TwosomeColorKey]: HexColor } = {
   "color-grayTh": "#999",
   "color-blackTwo": "#333",
   "color-grayFor": "#f5f5f5",
+};
+
+export const TwosomeFontSizes: { [key in TwosomeFontKey]: string } = {
+  "fontSize-56px": "56px",
+  "fontSize-24px": "24px",
+  "fontSize-16px": "16px",
+  "fontSize-20px": "20px",
+  "fontSize-32px": "32px",
+  "fontSize-14px": "14px",
+  "fontSize-12px": "12px",
 };
