@@ -10,6 +10,10 @@ export type TwosomeColorNames =
   | "grayFor";
 
 export type TwosomeFontSize =
+  | "13px"
+  | "40px"
+  | "18px"
+  | "72px"
   | "56px"
   | "24px"
   | "16px"
@@ -35,11 +39,15 @@ export const TwosomeColors: { [key in TwosomeColorKey]: HexColor } = {
 };
 
 export const TwosomeFontSizes: { [key in TwosomeFontKey]: string } = {
+  "fontSize-72px": "72px",
   "fontSize-56px": "56px",
   "fontSize-24px": "24px",
   "fontSize-16px": "16px",
   "fontSize-20px": "20px",
+  "fontSize-40px": "40px",
   "fontSize-32px": "32px",
+  "fontSize-18px": "18px",
   "fontSize-14px": "14px",
+  "fontSize-13px": "13px",
   "fontSize-12px": "12px",
 };

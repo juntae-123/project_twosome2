@@ -1,9 +1,16 @@
-type Text = {
+import {
+  TwosomeColorKey,
+  TwosomeColors,
+  TwosomeFontSize,
+  TwosomeFontSizes,
+} from "@/common/styles";
+
+type TextProps = {
   text: string;
   img: string;
 };
 
-const data: Text[] = [
+const data: TextProps[] = [
   {
     text: "Item 1",
     img: "https://www.twosome.co.kr/resources/images/content/img_p_mobile_illust_.svg",
@@ -15,7 +22,12 @@ const data: Text[] = [
 const Main = () => {
   return (
     <section>
-      <div>
+      <div
+        style={{
+          color: TwosomeColors["color-gray"],
+          fontSize: TwosomeFontSizes["fontSize-12px"],
+        }}
+      >
         <ul>
           {data.map((item, index) => (
             <li key={index}>{item.text}</li>
