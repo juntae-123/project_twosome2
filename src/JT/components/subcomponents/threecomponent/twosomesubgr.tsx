@@ -2,7 +2,7 @@ import { TwosomeFontSizes } from "@/common/styles";
 
 const Twosomesubgr = () => {
   return (
-    <section>
+    <section className="mb-30 ">
       <div
         style={{ marginTop: "100px" }}
         className="grid grid-cols-3 grid-rows-2 gap-4 max-w-[1312px] mx-auto"
