@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/ES/Footer/page";
+import Header from "@/HG/header/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <header className="flex justify-center items-center fixed top-0 left-0 w-[1920px] h-[100px] z-30">
+        <Header img="logowhite" button="logomenu" />
+      </header>
       <body>
         {children}
         <Footer></Footer>
