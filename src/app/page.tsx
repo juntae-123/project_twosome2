@@ -6,5 +6,14 @@ import NoticeText from "@/HB/components/subComponents/notice";
 import Link from "next/link";
 
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <div className="flex flex-col gap-100">
+        <Pagevision></Pagevision>
+        <PageStory></PageStory>
+        <BrandPage></BrandPage>
+        <PageNotice></PageNotice>
+      </div>
+    </>
+  );
 }
