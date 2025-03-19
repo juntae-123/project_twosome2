@@ -1,5 +1,9 @@
-import Image from "next/image";
+import MainBtmPage from "@/ES/page";
 
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <MainBtmPage />
+    </>
+  );
 }
