@@ -4,11 +4,11 @@ import SupportSection from "./Main/MainSectionSupport/page";
 
 const MainBtmPage = () => {
   return (
-    <section>
+    <>
       <SupportSection />
       <FranchiseSection />
       <NewsSection />
-    </section>
+    </>
   );
 };
 

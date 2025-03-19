@@ -12,7 +12,6 @@ import SwiperPagenation from "./supportSwipercomponents/SwiperPagenation";
 const SupportSwiper = () => {
   const [swiperIndex, setSwiperIndex] = useState<number>(0);
   const [swiper, setSwiper] = useState<SwiperClass | null>(null);
-
   const prev = () => swiper?.slidePrev();
   const next = () => swiper?.slideNext();
 
@@ -21,7 +20,7 @@ const SupportSwiper = () => {
       <Swiper
         loop={true}
         // loop와 slidesPerView 같이 쓸 땐 centeredSlides 추가
-        centeredSlides={true}
+        // centeredSlides={true}
         modules={[Navigation, Pagination]}
         spaceBetween={300}
         slidesPerView={1.6}
