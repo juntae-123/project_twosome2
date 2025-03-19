@@ -4,11 +4,10 @@ import { TwosomeTwFontSizes } from "@/common/tailstyles";
 const StoryText = () => {
   return (
     <>
-      <article className=" flex max-w-[1215px] justify-between items-center mb-14 ">
-        <div className="flex-[1_1_48%] pr-36">
-          <h1 className={`${TwosomeTwFontSizes["fontSize-56px"]}  font-black`}>
-            TWOSOME
-            <br /> COFFEE STORY
+      <article className=" flex flex-col  md:flex-row md: max-w-[1215px] justify-between  mb-14 ">
+        <div className=" flex-[1_1_48%] pr-0 md:pr-36 items-center">
+          <h1 className={`${TwosomeTwFontSizes["fontSize-56px"]}  font-black `}>
+            TWOSOME COFFEE <br /> STORY
           </h1>
           <h2
             className={`${TwosomeTwFontSizes["fontSize-32px"]} tracking-tight my-10 font-bold`}
@@ -27,7 +26,7 @@ const StoryText = () => {
             더해져 투썸플레이스만의 커피가 완성됩니다.
           </p>
         </div>
-        <div className="flex-[0_1_40%]">
+        <div className="flex-[0_1_40%] ">
           <img
             className="    max-width: 100%;"
             src="https://www.twosome.co.kr/resources/images/content/img_p_coffeestory.jpg"

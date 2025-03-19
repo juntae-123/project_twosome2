@@ -7,9 +7,9 @@ import Title from "../subComponents/title";
 const Pagevision = () => {
   return (
     <>
-      <div className="max-w-[1312px] mx-auto flex flex-col gap-15 mb-20">
+      <div className="max-w-[1312px] mx-auto px-10 flex  items-center flex-col  gap-15 mb-20  md:items-start  ">
         <Title text="비전체계" />
-        <div className="flex gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           <Card
             text="최고의 제품과 공간 경험으로
 고객의 행복한 일상을 함께한다"

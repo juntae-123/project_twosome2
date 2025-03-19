@@ -3,14 +3,14 @@ import { TwosomeTwColors, TwosomeTwFontSizes } from "@/common/tailstyles";
 const CoffeeCard = () => {
   return (
     <>
-      <div className="mb-20">
+      <div className="mb-20 flex flex-col  items-center    md:items-start">
         <h2
           className={`${TwosomeTwFontSizes["fontSize-40px"]} font-black tracking-tighter mb-8`}
         >
           투썸의 특별한 블랜드
         </h2>
-        <article className="flex justify-between max-w-[1215px]">
-          <article className=" w-[calc((100%-64px)/3)] border border-[#d6d6d6]  ">
+        <article className="flex flex-col gap-10 md:flex-row md: gap-0 justify-between max-w-[1215px]">
+          <article className=" w-150 md:w-95 border border-[#d6d6d6]  ">
             <div className="flex flex-col items-center w-[100%] py-12">
               <div className="flex flex-col items-center w-[100%]">
                 <img
@@ -96,7 +96,7 @@ const CoffeeCard = () => {
             </div>
           </article>
 
-          <article className=" w-[calc((100%-64px)/3)] border border-[#d6d6d6]  ">
+          <article className=" w-150 md:w-95 border border-[#d6d6d6]  ">
             <div className="flex flex-col items-center w-[100%] py-12">
               <div className="flex flex-col items-center w-[100%]">
                 <img
@@ -182,7 +182,7 @@ const CoffeeCard = () => {
             </div>
           </article>
 
-          <article className=" w-[calc((100%-64px)/3)] border border-[#d6d6d6]  ">
+          <article className=" w-150 md:w-95 border border-[#d6d6d6]  ">
             <div className="flex flex-col items-center w-[100%] py-12">
               <div className="flex flex-col items-center w-[100%]">
                 <img

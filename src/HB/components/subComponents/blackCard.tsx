@@ -34,8 +34,10 @@ const BlackCard = () => {
   return (
     <>
       <div
+        className="gap-6 md:gap-0"
         style={{
           maxWidth: "1216px",
+          width: "100%",
           height: "327px",
           backgroundColor: TwosomeColors["color-black"],
           display: "flex",
@@ -57,9 +59,10 @@ const BlackCard = () => {
           중장기 전략목표
         </dt>
         <dd
+          className="text-lg md:text-2xl"
           style={{
             color: TwosomeColors["color-white"],
-            fontSize: "24px",
+
             fontWeight: "bold",
             display: "flex",
             marginBottom: "16px",
@@ -69,7 +72,8 @@ const BlackCard = () => {
           <p className="underline"> 독보적 국내 1위</p>
         </dd>
         <strong
-          style={{ fontSize: "48px", color: TwosomeColors["color-white"] }}
+          className="text-2xl md:text-5xl "
+          style={{ color: TwosomeColors["color-white"] }}
         >
           Win Now, Win 2025!
         </strong>

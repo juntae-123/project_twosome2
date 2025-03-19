@@ -11,7 +11,7 @@ type coffeeProps = {
 const SgCoffeeCard = ({ img, text1, name, text2, text3 }: coffeeProps) => {
   return (
     <>
-      <article className="w-[calc((100%-96px)/4)] ">
+      <article className="w-200 md:w-70 ">
         <div className="realative ">
           <div
             className={`bg-black absolute text-[white] ${TwosomeTwFontSizes["fontSize-14px"]} px-3`}
