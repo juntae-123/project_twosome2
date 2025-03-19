@@ -43,6 +43,7 @@ const BlackCard = () => {
           alignItems: "center",
           padding: "68px 72px",
           position: "relative",
+          overflow: "hidden",
         }}
       >
         <dt
@@ -84,7 +85,7 @@ const BlackCard = () => {
         >
           <path
             ref={pathRef}
-            d="M0,300 C300,-100 900,500 1216,50" // 역동적인 곡선 경로
+            d="M0,300 C400,-200 800,700 1216,50"
             fill="none"
             stroke="rgba(0, 0, 0, 0.5)" // 더 강조된 핑크 계열 반투명 선
             strokeWidth="4"
