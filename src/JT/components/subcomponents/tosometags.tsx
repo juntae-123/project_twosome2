@@ -109,10 +109,6 @@ const Tosometags = () => {
               alt=""
             />
           </div>
-
-          <p className={`${TwosomeTwFontSizes["fontSize-24px"]}`}>
-            이건 동적으로 불러온 빨간색입니다.
-          </p>
         </div>
       </div>
     </section>

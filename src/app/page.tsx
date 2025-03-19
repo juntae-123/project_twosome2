@@ -1,11 +1,12 @@
-import Twosomesubgr from "@/JT/components/subcomponents/threecomponent/twosomesubgr";
-import Title from "../JT/components/subcomponents/tosometags";
+"use client";
+import Franchise from "@/JT/components/subcomponents/franchise";
+import FranchiseBanner from "@/JT/components/subcomponents/slides";
+import Twosomeall from "@/JT/twosomeall";
 
 export default function Home() {
   return (
     <>
-      <Title></Title>
-      <Twosomesubgr />
+      <Franchise />
     </>
   );
 }
