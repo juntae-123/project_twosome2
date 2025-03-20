@@ -20,10 +20,20 @@ import Signup from "./login";
 export default function Home() {
   return (
     <>
+<<<<<<< HEAD
       <PageNotice></PageNotice>
       <BrandPage></BrandPage>
       <Pagevision></Pagevision>
       <PageStory></PageStory>
+=======
+      <Sectiononeswiper />
+
+      <Sectiontwo />
+
+      <Sectionthree img="sectionthree1" />
+
+      <MainBtmPage />
+>>>>>>> origin/hg
     </>
   );
 >>>>>>> origin/my-LHB

@@ -32,22 +32,23 @@ const Sectiononeswiper = () => {
         }}
         modules={[Navigation, Pagination]}
         navigation={{
-          prevEl: ".sectionone-swiper-button-prev",
-          nextEl: ".sectionone-swiper-button-next",
+          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next",
         }}
-        pagination={{
-          el: ".sectionone-swiper-pagination",
-          type: "fraction",
-        }}
-        className="w-full h-screen"
+        // 페이지 번호 중앙정렬 수정해야함
+        // pagination={{
+        //   el: ".swiper-pagination",
+        //   type: "fraction",
+        // }}
+        style={{ width: "100%", height: "100vh" }}
       >
         <SwiperSlide>
-          <div className="w-full h-full bg-red-300 flex items-center justify-center">
+          <div className="w-full h-full flex items-center justify-center">
             <Sectionone img="sectionone1" />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full bg-blue-300 flex items-center justify-center">
+          <div className="w-full h-full flex items-center justify-center">
             <Sectionone img="sectionone2" />
           </div>
         </SwiperSlide>

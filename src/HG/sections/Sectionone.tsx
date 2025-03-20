@@ -6,10 +6,13 @@ type sectiononeProps = {
 
 const Sectionone = ({ img }: sectiononeProps) => {
   return (
-    <section
-      className="w-full h-full bg-cover bg-center"
-      style={{ backgroundImage: `url(${ImageMap[img]})` }}
-    ></section>
+    <picture
+      className="w-full h-full flex justify-center items-center"
+      style={{
+        backgroundImage: `url(${ImageMap[img]})`,
+        backgroundRepeat: "no-repeat",
+      }}
+    ></picture>
   );
 };
 

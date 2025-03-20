@@ -7,7 +7,7 @@ type sectiononeProps = {
 const Sectionthree = ({ img }: sectiononeProps) => {
   return (
     <section
-      className="w-full h-screen bg-cover bg-center"
+      className="w-full h-screen bg-cover bg-center object-cover"
       style={{ backgroundImage: `url(${ImageMap[img]})` }}
     >
       <div className="relative flex flex-col justify-center px-12 text-left max-w-[1312px] w-full h-[934px] mx-auto pt-28">
