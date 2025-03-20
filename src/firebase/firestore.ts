@@ -1,30 +1,35 @@
 import { db } from "./firebaseConfig";
-import { doc, getDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
-// 🔹 유저 데이터 타입 정의
-interface User {
-  name: string;
-  age: number;
+// 🔹 메뉴 아이템 데이터 타입 정의
+interface MenuItem {
+  id: string;
+  ename: string;
+  pricename: string;
+  explanation: string;
+  imgurl: string;
 }
 
-// 🔹 Firestore에서 "twosome" 컬렉션의 "list" 문서 데이터 가져오기
-export const fetchUsers = async (): Promise<User | null> => {
+export const fetchMenuItems = async (): Promise<MenuItem[]> => {
   try {
-    console.log("📡 fetchUsers() 실행됨! Firestore 데이터 요청 중..."); // ✅ 실행 확인 로그
+    console.log("📡 Firestore에서 메뉴 데이터 가져오는 중...");
 
-    const docRef = doc(db, "twosome", "list"); // ✅ Firestore 경로 확인
-    const docSnap = await getDoc(docRef);
+    const querySnapshot = await getDocs(collection(db, "twosome"));
+    const menuItems: MenuItem[] = querySnapshot.docs.map((doc) => {
+      const data = doc.data();
+      return {
+        id: doc.id,
+        ename: data.ename ?? "이름 없음",
+        pricename: data.pricename ?? "이름 없음",
+        explanation: data.explanation ?? "설명 없음",
+        imgurl: data.imgurl ?? "",
+      };
+    });
 
-    if (!docSnap.exists()) {
-      console.warn("⚠ Firestore에 데이터가 없습니다.");
-      return null;
-    }
-
-    const data = docSnap.data() as User;
-    console.log("🔥 Firestore에서 가져온 데이터:", data); // ✅ 데이터 확인 로그
-    return data;
+    console.log("🔥 Firestore에서 가져온 메뉴 데이터:", menuItems);
+    return menuItems;
   } catch (error) {
-    console.error("❌ Firestore 데이터 가져오기 실패:", error);
-    return null;
+    console.error("❌ Firestore 메뉴 데이터 가져오기 실패:", error);
+    return [];
   }
 };
