@@ -8,12 +8,9 @@ export default function Home() {
     <>
       <Sectiononeswiper />
 
-      <section>
-        <Sectiontwo />
-      </section>
-      <section>
-        <Sectionthree img="sectionthree1" />
-      </section>
+      <Sectiontwo />
+
+      <Sectionthree img="sectionthree1" />
 
       <MainBtmPage />
     </>
