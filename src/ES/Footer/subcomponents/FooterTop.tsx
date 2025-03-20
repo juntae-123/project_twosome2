@@ -6,10 +6,10 @@ const FooterTop = () => {
       <ul
         className={`${TwosomeTwFontSizes["fontSize-24px"]} font-semibold flex flex-col gap-5`}
       >
-        <li>기업 및 단체구매안내</li>
-        <li>협력업체 제안</li>
-        <li>가맹상담신청</li>
-        <li>사이버신문고</li>
+        <li className="hover:underline">기업 및 단체구매안내</li>
+        <li className="hover:underline">협력업체 제안</li>
+        <li className="hover:underline">가맹상담신청</li>
+        <li className="hover:underline">사이버신문고</li>
       </ul>
       <div className="flex flex-col gap-8">
         <dl className="flex flex-col gap-3">
