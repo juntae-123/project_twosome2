@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client"; // ✅ 클라이언트 컴포넌트 설정
 
 import React, { useEffect, useState } from "react";
@@ -12,6 +13,16 @@ interface MenuItem {
   explanation: string;
   imgurl: string;
 }
+=======
+import BrandPage from "@/HB/components/pageBrand/page";
+import PageDel from "@/HB/components/pageDel/page";
+import PageDesert from "@/HB/components/pageDesert/page";
+import Pagevision from "@/HB/components/pageIntro/page";
+import PageStory from "@/HB/components/pageMenu/page";
+import PageNotice from "@/HB/components/pageNotice/page";
+import NoticeText from "@/HB/components/subComponents/notice";
+import Link from "next/link";
+>>>>>>> origin/my-LHB
 
 export default function Home() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
@@ -29,6 +40,7 @@ export default function Home() {
   }, []);
 
   return (
+<<<<<<< HEAD
     // <div>
     //   <h1>🔥 투썸플레이스 메뉴</h1>
 
@@ -76,5 +88,12 @@ export default function Home() {
     <div>
       <AdminPage />
     </div>
+=======
+    <>
+      <PageStory></PageStory>
+      <PageDel></PageDel>
+      <PageDesert></PageDesert>
+    </>
+>>>>>>> origin/my-LHB
   );
 }
