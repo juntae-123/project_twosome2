@@ -4,7 +4,7 @@ import SgCoffeeCard from "./sgCoffeeCard";
 const SgCoffee = () => {
   return (
     <>
-      <div className="max-w-[1215px]  flex flex-col items-center md: items-start">
+      <div className="max-w-[1215px]  flex flex-col items-center max-md:items-start">
         <h2
           className={`${TwosomeTwFontSizes["fontSize-40px"]} font-black tracking-tighter ml-8 md:ml-0 mb-8 `}
         >
