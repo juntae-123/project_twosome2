@@ -31,6 +31,14 @@ const desertMenu = [
       "딸기와 복숭아의 상큼함이 조화롭게 어우러져 달콤하고 시원하게 즐길 수 있는 과일 프라페",
     text3: "",
   },
+  {
+    img: "https://www.twosome.co.kr/resources/images/content/img_t_menu04@3x.png",
+    name: "스트로베리 피치 프라페 디저트",
+    text1: "Strawberry Peach Frappe",
+    text2:
+      "딸기와 복숭아의 상큼함이 조화롭게 어우러져 달콤하고 시원하게 즐길 수 있는 과일 프라페",
+    text3: "",
+  },
 ];
 
 export default desertMenu;

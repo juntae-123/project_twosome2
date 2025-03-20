@@ -11,8 +11,6 @@ export default function Home() {
   return (
     <>
       <PageStory></PageStory>
-      <PageDel></PageDel>
-      <PageDesert></PageDesert>
     </>
   );
 }

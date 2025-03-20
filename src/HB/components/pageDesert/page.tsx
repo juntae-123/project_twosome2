@@ -26,7 +26,7 @@ const PageDesert = () => {
       <article className="max-w-[1312px] mx-auto flex flex-col gap-10 items-center md:items-start">
         <Title {...Data} />
         <StoryText {...Data} />
-        <SgCoffee {...Data} />
+
         <SgCoffee {...Data} />
       </article>
     </>

@@ -11,9 +11,9 @@ type StoryProps = {
 };
 const PageStory = () => {
   const Data = {
-    main: "시그니처 커피&음료",
     text: "커피이야기",
     title: "TWOSOME COFFEE STORY",
+    main: "시그니처 커피&음료",
     intro:
       "내 취향이 담긴 커피, 투썸플레이스에는 내 취향을 담아 섬세하게 만든 나만의 커피가 있습니다.",
 
