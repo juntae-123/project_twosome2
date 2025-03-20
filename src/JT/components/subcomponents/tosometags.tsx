@@ -47,8 +47,8 @@ const Tosometags = () => {
 
         <div>
           <h1
+            className="text-3xl md:text-5xl lg:text-7xl font-black  "
             style={{
-              fontSize: TwosomeFontSizes["fontSize-72px"],
               color: TwosomeColors["color-black"],
               marginBottom: "64px",
             }}
@@ -56,23 +56,19 @@ const Tosometags = () => {
             {data[1].text}
           </h1>
         </div>
-        <div className="flex justify-between">
+        <div className="flex flex-col lg:flex-row lg:justify-between ">
           <dl>
             <dt
-              className="font-bold"
+              className="font-bold  text-2xl md:text-4xl   lg:text-6xl  "
               style={{
-                fontSize: TwosomeFontSizes["fontSize-56px"],
                 marginBottom: "35px",
               }}
             >
               {data[3].text}
             </dt>
             <dd
-              className="font-bold"
-              style={{
-                fontSize: TwosomeFontSizes["fontSize-32px"],
-                marginBottom: "50px",
-              }}
+              className="font-bold text-x1 md:text-2xl lg:text-4xl  mb-7 lg:mb-14"
+              style={{}}
             >
               {data[4].text} <br /> {data[5].text}
             </dd>
@@ -105,14 +101,11 @@ const Tosometags = () => {
 
           <div>
             <img
+              className="w-200  mt-10 lg:w-120 lg:mt-0"
               src="https://www.twosome.co.kr/resources/images/content/img_p_mobile_illust_.svg"
               alt=""
             />
           </div>
-
-          <p className={`${TwosomeTwFontSizes["fontSize-24px"]}`}>
-            이건 동적으로 불러온 빨간색입니다.
-          </p>
         </div>
       </div>
     </section>

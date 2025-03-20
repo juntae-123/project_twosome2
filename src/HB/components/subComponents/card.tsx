@@ -1,4 +1,5 @@
 import { TwosomeColors, TwosomeFontSizes } from "@/common/styles";
+import { TwosomeTwFontSizes } from "@/common/tailstyles";
 
 type TitleProps = {
   title: string;
@@ -15,12 +16,12 @@ const Card = ({ text, title, img }: TitleProps) => {
       <article
         style={{
           padding: "68px 72px",
-          width: "590px",
+          width: "max-w-[calc(50%-35px)]",
           backgroundColor: TwosomeColors["color-grayFor"],
           position: "relative",
           overflow: "hidden",
         }}
-        className="h-80"
+        className="h-80 "
       >
         <div
           className=" animate-spin"
@@ -47,9 +48,10 @@ const Card = ({ text, title, img }: TitleProps) => {
             {title}
           </h1>
           <p
+            className="text-xl lg:text-3xl "
             style={{
               fontWeight: "900",
-              fontSize: TwosomeFontSizes["fontSize-32px"],
+
               wordBreak: "keep-all",
               wordWrap: "break-word",
               letterSpacing: "-3px",

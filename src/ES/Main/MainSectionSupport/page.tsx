@@ -5,7 +5,7 @@ import { TwosomeTwColors } from "@/common/tailstyles";
 const SupportSection = () => {
   return (
     <div
-      className={`w-[100vw] h-[100vh] bg-white ${TwosomeTwColors["color-black"]} max-md:h-[719px] max-md:px-[80px]`}
+      className={`relative w-[100vw] h-[100vh] bg-white ${TwosomeTwColors["color-black"]}`}
     >
       <SupportTitle />
       <SupportSwiper />
