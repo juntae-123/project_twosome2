@@ -27,7 +27,7 @@ const SgCoffeeCard = ({ img, text1, name, text2, text3 }: coffeeProps) => {
     const loadMenu = async () => {
       const fetchedMenu = await fetchMenuItems(); // fetchedMenu 타입을 명시적으로 MenuItem[]로 지정
       setMenuItems(fetchedMenu);
-      console.log(fetchedMenu);
+      console.log(fetchedMenu[0].menu);
     };
 
     loadMenu();
