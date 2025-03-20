@@ -20,7 +20,11 @@ const BlackCard = () => {
         repeatDelay: 0.5, // 반복 간격을 짧게
         ease: "power2.inOut", // 부드러운 가속 및 감속 추가
         stagger: 0.2, // 스태거 효과 추가 (각 요소가 0.2초 간격으로 시작)
-        opacity: [1, 0.3, 1], // 중간에 반투명해졌다가 다시 나타나도록 설정
+        keyframes: [
+          { opacity: 1 }, // 시작 상태 (완전히 보임)
+          { opacity: 0.3 }, // 중간 상태 (반투명)
+          { opacity: 1 }, // 마지막 상태 (다시 완전히 보임)
+        ],
         motionPath: {
           path: pathRef.current,
           align: pathRef.current,
