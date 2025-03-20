@@ -4,10 +4,12 @@ import Canoncard from "./canonCard";
 const CanonBigCard = () => {
   return (
     <article>
-      <h2 className={`${TwosomeTwFontSizes["fontSize-40px"]} font-bold mb-8`}>
+      <h2
+        className={`${TwosomeTwFontSizes["fontSize-40px"]} font-bold mb-8 flex flex-col items-center md:items-start`}
+      >
         행동규범
       </h2>
-      <div className="flex">
+      <div className="grid grid-cols-2 gap-0  md:flex ">
         <Canoncard
           img="https://www.twosome.co.kr/resources/images/icon/ico_act_1.svg"
           text="능동적실행"

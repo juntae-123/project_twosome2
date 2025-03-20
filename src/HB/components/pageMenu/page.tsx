@@ -6,7 +6,7 @@ import Title from "../subComponents/title";
 const PageStory = () => {
   return (
     <>
-      <article className="max-w-[1312px] mx-auto flex flex-col gap-10">
+      <article className="max-w-[1312px] mx-auto flex flex-col gap-10 items-center md:items-start">
         <Title text="커피이야기"></Title>
         <StoryText></StoryText>
         <CoffeeCard></CoffeeCard>

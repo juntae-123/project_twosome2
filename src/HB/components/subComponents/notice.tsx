@@ -6,21 +6,23 @@ import { BsArrowRight } from "react-icons/bs";
 const ITEMS_PER_PAGE = 10;
 
 interface NoticeTextProps {
-  searchTerm: string;
+  searchQuery: string; // 🔍 검색 실행된 값만 반영
 }
 
-const NoticeText: React.FC<NoticeTextProps> = ({ searchTerm }) => {
+const NoticeText: React.FC<NoticeTextProps> = ({ searchQuery }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
+  // 🔍 실제 검색 실행된 값만 필터링
   const filteredData = useMemo(() => {
     return Data.filter((item) =>
-      item.text.toLowerCase().includes(searchTerm.toLowerCase())
-    ).sort((a, b) => b.date.localeCompare(a.date));
-  }, [searchTerm]);
+      item.text.toLowerCase().includes(searchQuery.toLowerCase())
+    ).sort((a, b) => b.date.localeCompare(a.date)); // 날짜 내림차순 정렬
+  }, [searchQuery]); // searchQuery가 변경될 때만 필터링 수행
 
   const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
 
+  // 현재 페이지 데이터 추출
   const currentData = useMemo(() => {
     return filteredData.slice(
       (currentPage - 1) * ITEMS_PER_PAGE,
@@ -39,10 +41,11 @@ const NoticeText: React.FC<NoticeTextProps> = ({ searchTerm }) => {
             onMouseLeave={() => setHoveredItem(null)}
           >
             <div className="flex items-center">
+              {/* 순번을 내림차순으로 표시 */}
               <div
                 className={`${TwosomeTwFontSizes["fontSize-14px"]} font-bold px-8`}
               >
-                {(currentPage - 1) * ITEMS_PER_PAGE + i + 1}
+                {filteredData.length - ((currentPage - 1) * ITEMS_PER_PAGE + i)}
               </div>
               <div
                 className={`${TwosomeTwFontSizes["fontSize-24px"]} font-medium`}

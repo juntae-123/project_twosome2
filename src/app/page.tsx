@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client"; // ✅ 클라이언트 컴포넌트 설정
 
 import React, { useEffect, useState } from "react";
@@ -7,6 +8,25 @@ import Tosometags from "@/JT/components/subcomponents/tosometags";
 interface User {
   name: string;
   age: number;
+=======
+import BrandPage from "@/HB/components/pageBrand/page";
+import Pagevision from "@/HB/components/pageIntro/page";
+import PageStory from "@/HB/components/pageMenu/page";
+import PageNotice from "@/HB/components/pageNotice/page";
+import NoticeText from "@/HB/components/subComponents/notice";
+import Link from "next/link";
+import Signup from "./login";
+
+export default function Home() {
+  return (
+    <>
+      <PageNotice></PageNotice>
+      <BrandPage></BrandPage>
+      <Pagevision></Pagevision>
+      <PageStory></PageStory>
+    </>
+  );
+>>>>>>> origin/my-LHB
 }
 
 const Page: React.FC = () => {

@@ -4,14 +4,14 @@ import SgCoffeeCard from "./sgCoffeeCard";
 const SgCoffee = () => {
   return (
     <>
-      <div className="max-w-[1215px]">
+      <div className="max-w-[1215px]  flex flex-col items-center md: items-start">
         <h2
-          className={`${TwosomeTwFontSizes["fontSize-40px"]} font-black tracking-tighter mb-8 `}
+          className={`${TwosomeTwFontSizes["fontSize-40px"]} font-black tracking-tighter ml-8 md:ml-0 mb-8 `}
         >
           시그니처 커피&음료
         </h2>
         <div
-          className="flex justify-between
+          className="flex flex-col items-end ml-10  md:ml-0   gap-10 md:flex-row justify-between
         "
         >
           <SgCoffeeCard
