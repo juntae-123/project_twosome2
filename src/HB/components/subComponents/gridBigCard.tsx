@@ -8,7 +8,7 @@ const GridBigCard = () => {
         <h2 className={`${TwosomeTwFontSizes["fontSize-40px"]} font-bold mb-8`}>
           핵심가치
         </h2>
-        <div className="flex flex-col md:flex-row flex gap-9">
+        <div className="flex flex-col md:flex-row gap-9">
           <GridCard
             textmain="Customer centric"
             text="고객중심"
