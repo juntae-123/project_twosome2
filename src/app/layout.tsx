@@ -27,11 +27,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <header className="flex justify-center items-center fixed top-0 left-0 w-[1920px] h-[100px] z-30">
+        {/* <header className="flex justify-center items-center fixed top-0 left-0 w-[1920px] h-[100px] z-30">
           <Header img="logowhite" button="logomenu" />
-        </header>
+        </header> */}
         {children}
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </body>
     </html>
   );
