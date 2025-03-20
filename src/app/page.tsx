@@ -10,6 +10,9 @@ export default function Home() {
   return (
     <>
       <PageNotice></PageNotice>
+      <BrandPage></BrandPage>
+      <Pagevision></Pagevision>
+      <PageStory></PageStory>
     </>
   );
 }
