@@ -190,7 +190,7 @@ const TwosomeSwiper = () => {
                     {slide.description}
                   </p>
 
-                  <div className="gap-8 mt-6 flex items-center text-center">
+                  <div className="gap-8 mt-6 grid grid-cols-2 md:grid-cols-4   text-center">
                     {slide.icons?.map((icon, i) => (
                       <div key={i} className="text-center">
                         <Image
@@ -224,7 +224,7 @@ const TwosomeSwiper = () => {
         </Swiper>
       </div>
       <div className="max-w-[1312px] mx-auto flex justify-between items-center py-6 mb-28">
-        <h2 className="text-3xl font-bold">투썸하트 앱 다운로드</h2>
+        <h2 className=" text-xl md:text-3xl font-bold">투썸하트 앱 다운로드</h2>
 
         <div className="flex items-center gap-4">
           <a

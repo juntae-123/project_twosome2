@@ -5,7 +5,7 @@ const Twosomesubgr = () => {
     <section className="mb-30 ">
       <div
         style={{ marginTop: "100px" }}
-        className="grid grid-cols-3 grid-rows-2 gap-4 max-w-[1312px] mx-auto"
+        className="grid   grid-cols-1 gridrows-6  lg:grid-cols-3 lg:grid-rows-2 gap-4 max-w-[1312px] mx-auto"
       >
         <div
           style={{ padding: "48px 32px", border: "1px solid #d6d6d6" }}

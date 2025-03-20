@@ -39,8 +39,7 @@ const steps = [
   {
     step: "STEP 06",
     title: "시공 : 점포실측, 디자인 결정 후 공사 진행",
-    description:
-      "·실측 후 설계도면 작성, 점주님과 최종 협의\n·시공업체 선정(입찰), 공사 계약\n·공사 기간 약 25일 ~ 35일 예상",
+    description: "·실측 후 설계도면 작성, 점주님과 최종 협의",
   },
   {
     step: "STEP 07",
@@ -93,7 +92,7 @@ const franchiselist: franchiselistProps[] = [
   { name: "FAQ" },
   { name: "가맹점 전용 금융상품" },
 ];
-
+``;
 const Franchise = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -113,36 +112,30 @@ const Franchise = () => {
           ))}
         </ul>
 
-        <h1 className="text-black text-[72px] font-bold mb-10">
+        <h1 className="text-black   text-3xl md:text-5xl lg:text-7xl  font-bold mb-10">
           가맹점 창업안내
         </h1>
-        <ul className="flex">
-          <li style={{ fontSize: "20px" }} className="mr-5 font-bold">
-            {franchiselist[0].name}
-          </li>
-          <li style={{ fontSize: "20px" }} className="mr-5 font-bold">
-            {franchiselist[1].name}
-          </li>
-          <li style={{ fontSize: "20px" }} className="mr-5 font-bold">
-            {franchiselist[2].name}
-          </li>
-          <li style={{ fontSize: "20px" }} className="mr-5 font-bold">
-            {franchiselist[3].name}
-          </li>
-          <li style={{ fontSize: "20px" }} className="mr-5 font-bold">
-            {franchiselist[4].name}
-          </li>
+        <ul className="flex lg: text-sm md:text-lg lg:text-xl ">
+          <li className="mr-5 font-bold">{franchiselist[0].name}</li>
+          <li className="mr-5 font-bold">{franchiselist[1].name}</li>
+          <li className="mr-5 font-bold">{franchiselist[2].name}</li>
+          <li className="mr-5 font-bold">{franchiselist[3].name}</li>
+          <li className="mr-5 font-bold">{franchiselist[4].name}</li>
         </ul>
         <h2 className="font-bold text-[40px] mt-12">창업절차</h2>
-        <div className="grid grid-cols-3 gap-4 mt-6">
+
+        <div className="grid grid-cols-1  lg:grid-cols-3  gap-4 mt-6">
           {steps.map((step, index) => (
-            <div key={index} className="border border-gray-300 h-[325px] p-6">
+            <div
+              key={index}
+              className="border border-gray-300  h-55 lg:h-80  p-6"
+            >
               <em
                 className={`text-[18px] mb-3 ${TwosomeTwColors["color-red"]}`}
               >
                 {step.step}
               </em>
-              <p className="text-[24px] mb-5">{step.title}</p>
+              <p className="text-[24px] mb-5 text-black">{step.title}</p>
               <p className="text-[18px] text-black whitespace-pre-line">
                 {step.description}
               </p>
@@ -151,7 +144,7 @@ const Franchise = () => {
         </div>
 
         <h2 className="font-bold text-[40px] mt-12">창업조건</h2>
-        <div className="grid grid-cols-3 gap-4 mt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-6">
           {conditions.map((item, index) => (
             <div
               key={index}
