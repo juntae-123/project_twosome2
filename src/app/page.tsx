@@ -49,6 +49,7 @@ interface MenuItem {
 
 import AdminPage from "./admin/admin";
 import MainBtmPage from "@/ES/page";
+import SupportSection from "@/ES/Main/MainSectionSupport/page";
 
 // interface MenuItem {
 //   id: string;
@@ -86,7 +87,9 @@ export default function Home() {
 >>>>>>> origin/ES
 =======
     <div>
-      <Pagemain />
+      {/* <Pagemain /> */}
+      <SupportSection />
+      <AdminPage />
     </div>
 >>>>>>> 9bb6444b564a39338100d1e75f5bf77560e4d6f9
   );
