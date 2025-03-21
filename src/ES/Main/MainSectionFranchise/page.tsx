@@ -20,9 +20,9 @@ const FranchiseSection = () => {
   }, []);
 
   return (
-    <section className="relative h-screen overflow-hidden bg-[#f5f5f5]">
+    <section className="relative h-screen overflow-hidden bg-[#f5f5f5] max-md:h-[567px] ">
       <div
-        className="absolute top-0 left-0 flex h-full w-[200vw]"
+        className="absolute top-0 left-0 flex h-full w-[200vw] max-md:gap-10"
         style={{
           transform: `translateX(${offsetX}px)`, // offsetX 값에 맞게 가로로 이동시키기기
         }}
@@ -32,15 +32,15 @@ const FranchiseSection = () => {
       </div>
 
       <div
-        className={`relative z-10 flex flex-col items-center justify-center h-full text-center ${TwosomeTwColors["color-black"]}`}
+        className={`relative z-10 flex flex-col items-center justify-center h-full text-center ${TwosomeTwColors["color-black"]} `}
       >
         <FranchiseTitle />
         <p
-          className={`${TwosomeTwFontSizes["fontSize-24px"]} mt-4 font-bold py-[32px]`}
+          className={`${TwosomeTwFontSizes["fontSize-24px"]} mt-4 font-bold py-[32px] max-md:text-base max-md:mt-[0px]`}
         >
           당신의 창업 성공 스토리, <br /> 투썸플레이스가 함께합니다.
         </p>
-        <p className="text-lg font-normal max-w-lg mb-[48px]">
+        <p className="text-lg font-normal max-w-lg mb-[48px] max-md:text-sm max-md:max-w-sm max-md:mb-0">
           향기로운 커피와 달콤한 디저트가 함께하는 프리미엄 디저트 카페
           투썸플레이스. 투썸플레이스의 축적된 경험과 노하우를 바탕으로 성공
           창업을 약속드립니다.
@@ -51,17 +51,17 @@ const FranchiseSection = () => {
         >
           <button
             className="border-2 border-black px-6 py-3 bg-white flex items-center gap-[16px]
-          hover:bg-black hover:text-white"
+          hover:bg-black hover:text-white max-md:text-sm"
           >
             <span>창업안내 바로가기</span>
-            <GoArrowRight />
+            <GoArrowRight className="max-md:hidden" />
           </button>
           <button
             className="border-2 border-black px-6 py-3 bg-white flex items-center gap-[16px]
-          hover:bg-black hover:text-white "
+          hover:bg-black hover:text-white max-md:text-sm"
           >
             <span>가맹상담 신청</span>
-            <GoArrowRight />
+            <GoArrowRight className="max-md:hidden" />
           </button>
         </div>
       </div>

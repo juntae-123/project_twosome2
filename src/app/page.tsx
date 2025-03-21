@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 "use client";
 <<<<<<< HEAD
 =======
@@ -11,6 +12,12 @@ import PageNotice from "@/HB/components/pageNotice/page";
 
 import Link from "next/link";
 >>>>>>> origin/my-LHB
+=======
+import Footer from "@/ES/Footer/page";
+import FranchiseSection from "@/ES/Main/MainSectionFranchise/page";
+import NewsSection from "@/ES/Main/MainSectionNews/page";
+import SupportSection from "@/ES/Main/MainSectionSupport/page";
+>>>>>>> origin/ES
 
 import React, { useEffect, useState } from "react";
 import { fetchMenuItems } from "@/firebase/firestore";
@@ -34,6 +41,7 @@ interface MenuItem {
 >>>>>>> origin/hg
 export default function Home() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   return (
 <<<<<<< HEAD
     <div>
@@ -46,6 +54,15 @@ export default function Home() {
       <AdminPage />
     </>
 >>>>>>> origin/hg
+=======
+  return (
+    <>
+      <SupportSection />
+      <FranchiseSection />
+      <NewsSection />
+      <Footer />
+    </>
+>>>>>>> origin/ES
   );
 =======
   return <></>;

@@ -1,31 +1,30 @@
-.swiper {
+/* .swiper {
   width: 1600px;
   height: 600px;
   margin-right: 0;
   position: relative;
-}
+} */
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
 
-  /* Center slide text verticly */
   display: flex;
   justify-content: center;
   align-items: end;
   gap: 72px;
 }
 
-.swiper-slide img {
+/* .swiper-slide img {
   display: block;
   width: 552px;
   height: 552px;
   object-fit: cover;
-}
+} */
 
-.swiper-slide .support_smallImg {
+/* .swiper-slide .support_smallImg {
   width: 62px;
   height: 100px;
   object-fit: cover;
-}
+} */
