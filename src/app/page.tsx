@@ -8,13 +8,5 @@ import PageNotice from "@/HB/components/pageNotice/page";
 import Link from "next/link";
 
 export default function Home() {
-  return (
-    <>
-      <div className="flex felx-col gap-50">
-        <PageDel></PageDel>
-        <PageDesert></PageDesert>
-        <PageStory></PageStory>
-      </div>
-    </>
-  );
+  return <></>;
 }
