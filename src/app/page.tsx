@@ -8,6 +8,7 @@ import Link from "next/link";
 
 import AdminPage from "./admin/admin";
 import MainBtmPage from "@/ES/page";
+import SupportSection from "@/ES/Main/MainSectionSupport/page";
 
 // interface MenuItem {
 //   id: string;
@@ -20,7 +21,9 @@ import MainBtmPage from "@/ES/page";
 export default function Home() {
   return (
     <div>
-      <Pagemain />
+      {/* <Pagemain /> */}
+      <SupportSection />
+      <AdminPage />
     </div>
   );
 }
