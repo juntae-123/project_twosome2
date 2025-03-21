@@ -1,11 +1,16 @@
 "use client";
+<<<<<<< HEAD
 
 import React, { useEffect, useState } from "react";
 import { fetchMenuItems } from "@/firebase/firestore";
 import Link from "next/link";
+=======
+import Pagemain from "@/HG/components/Pagemain";
+>>>>>>> origin/hg
 import AdminPage from "./admin/admin";
 import MainBtmPage from "@/ES/page";
 
+<<<<<<< HEAD
 interface MenuItem {
   id: string;
   ename: string;
@@ -14,25 +19,20 @@ interface MenuItem {
   imgurl: string;
 }
 
+=======
+>>>>>>> origin/hg
 export default function Home() {
-  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
-
-  useEffect(() => {
-    console.log("🔄 Firestore에서 메뉴 데이터 요청 중...");
-
-    const loadMenuItems = async () => {
-      const fetchedMenuItems = await fetchMenuItems();
-      console.log("🎯 가져온 메뉴 데이터:", fetchedMenuItems);
-      setMenuItems(fetchedMenuItems);
-    };
-
-    loadMenuItems();
-  }, []);
-
   return (
+<<<<<<< HEAD
     <div>
       <MainBtmPage />
       <AdminPage />
     </div>
+=======
+    <>
+      <Pagemain />
+      <AdminPage />
+    </>
+>>>>>>> origin/hg
   );
 }

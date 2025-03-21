@@ -9,7 +9,7 @@ const CoffeeCard = () => {
         >
           투썸의 특별한 블랜드
         </h2>
-        <article className="flex flex-col gap-10 md:flex-row md: gap-0 justify-between max-w-[1215px]">
+        <article className="flex flex-col gap-10 md:flex-row md:gap-0 justify-between max-w-[1215px]">
           <article className=" w-150 md:w-95 border border-[#d6d6d6]  ">
             <div className="flex flex-col items-center w-[100%] py-12">
               <div className="flex flex-col items-center w-[100%]">
