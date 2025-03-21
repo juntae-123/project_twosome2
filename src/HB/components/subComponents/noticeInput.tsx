@@ -39,7 +39,7 @@ const NoticeInput: React.FC<SearchInputProps> = ({
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               onKeyDown={handleKeyDown} // Enter 입력 시 검색 실행
-              placeholder="검색어 입력"
+              placeholder="검색어 입력 후 엔터"
               className="w-[100%] h-[100%] border-b"
             />
             <div className={`absolute right-0 top-5 pr-3`}>
