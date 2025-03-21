@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 "use client";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import BrandPage from "@/HB/components/pageBrand/page";
 import PageDel from "@/HB/components/pageDel/page";
@@ -18,10 +19,15 @@ import FranchiseSection from "@/ES/Main/MainSectionFranchise/page";
 import NewsSection from "@/ES/Main/MainSectionNews/page";
 import SupportSection from "@/ES/Main/MainSectionSupport/page";
 >>>>>>> origin/ES
+=======
+
+import Pagemain from "@/HG/components/Pagemain";
+>>>>>>> 9bb6444b564a39338100d1e75f5bf77560e4d6f9
 
 import React, { useEffect, useState } from "react";
 import { fetchMenuItems } from "@/firebase/firestore";
 import Link from "next/link";
+<<<<<<< HEAD
 =======
 import Pagemain from "@/HG/components/Pagemain";
 >>>>>>> origin/hg
@@ -39,10 +45,25 @@ interface MenuItem {
 
 =======
 >>>>>>> origin/hg
+=======
+
+import AdminPage from "./admin/admin";
+import MainBtmPage from "@/ES/page";
+
+// interface MenuItem {
+//   id: string;
+//   ename: string;
+//   pricename: string;
+//   explanation: string;
+//   imgurl: string;
+// }
+
+>>>>>>> 9bb6444b564a39338100d1e75f5bf77560e4d6f9
 export default function Home() {
 <<<<<<< HEAD
 <<<<<<< HEAD
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div>
       <MainBtmPage />
@@ -63,6 +84,11 @@ export default function Home() {
       <Footer />
     </>
 >>>>>>> origin/ES
+=======
+    <div>
+      <Pagemain />
+    </div>
+>>>>>>> 9bb6444b564a39338100d1e75f5bf77560e4d6f9
   );
 =======
   return <></>;
