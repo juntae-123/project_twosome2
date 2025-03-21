@@ -7,8 +7,8 @@ export type SwiperSlideContentsProps = {
   subImage: string;
   title: string;
   dsc: string;
+  id: string;
 };
-
 const SwiperSlideContents = ({
   mainImage,
   subImage,
