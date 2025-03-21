@@ -1,40 +1,52 @@
 import { TwosomeTwFontSizes } from "@/common/tailstyles";
+import React, { useEffect, useState } from "react";
+import { fetchMenuItems } from "@/firebase/firestore"; // ✅ Firestore에서 메뉴 데이터 가져오기
 
-type coffeeProps = {
-  img: string;
-  text1: string;
-  name: string;
-  text2: string;
-  text3: string;
-};
+interface MenuItem {
+  menu: string;
+  id: string;
+  ename: string;
+  pricename: string;
+  explanation: string;
+  imgurl: string;
+  details: string;
+}
 
-const SgCoffeeCard = ({ img, text1, name, text2, text3 }: coffeeProps) => {
+const SgCoffeeCard = ({
+  menu,
+  id,
+  ename,
+  pricename,
+  explanation,
+  imgurl,
+  details,
+}: MenuItem) => {
   return (
     <>
-      <article className="w-170 md:w-70 mt-5  ">
-        <div className="realative ">
+      <article className="w-170 md:w-70 mt-5">
+        <div className="relative">
           <div
             className={`bg-black absolute text-[white] ${TwosomeTwFontSizes["fontSize-14px"]} px-3`}
           >
-            Espress
+            {menu}
           </div>
-          <img src={img} alt="" />
+          <img src={imgurl} alt={id} />
         </div>
         <div
-          className={`${TwosomeTwFontSizes["fontSize-24px"]} font-black  mt-6 `}
+          className={`${TwosomeTwFontSizes["fontSize-24px"]} font-black mt-6`}
         >
-          {name}
+          {pricename}
         </div>
-        <div className="text-[#707070]  mb-5">{text1}</div>
+        <div className="text-[#707070] mb-5">{ename}</div>
         <div
-          className={`${TwosomeTwFontSizes["fontSize-18px"]} font-black tracking-tighter mb-5 `}
+          className={`${TwosomeTwFontSizes["fontSize-18px"]} font-black tracking-tighter mb-5`}
         >
-          {text2}
+          {explanation}
         </div>
         <div
           className={`${TwosomeTwFontSizes["fontSize-13px"]} tracking-tighter text-[#707070]`}
         >
-          {text3}
+          {details}
         </div>
       </article>
     </>

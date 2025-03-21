@@ -16,11 +16,10 @@ const SupportSwiper = () => {
   const next = () => swiper?.slideNext();
 
   return (
-    <div className=" w-[68%] absolute top-[20%] right-0">
+    <div className=" w-[69%] absolute top-[20%] right-0 max-md:top-12 max-md:left-[-59.5%] max-md:w-full">
       <Swiper
+        className="w-[1600px] h-[600px] mr-0 relative"
         loop={true}
-        // loop와 slidesPerView 같이 쓸 땐 centeredSlides 추가
-        // centeredSlides={true}
         modules={[Navigation, Pagination]}
         spaceBetween={300}
         slidesPerView={1.6}
@@ -31,7 +30,7 @@ const SupportSwiper = () => {
       >
         {slideArr.map((v) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide className="text-center text-lg bg-white flex justify-center items-end">
               <SwiperSlideContents {...v} />
             </SwiperSlide>
           );

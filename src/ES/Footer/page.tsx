@@ -7,7 +7,7 @@ const Footer = () => {
     <footer
       className={`w-screen h-[578px] bg-black ${TwosomeTwColors["color-white"]} py-[48px]`}
     >
-      <div className="w-full max-w-[1312px] h-full m-auto">
+      <div className="w-full max-w-[1312px] h-full m-auto max-md:max-w-[350px]">
         <FooterTop />
         <FooterBottom />
       </div>
