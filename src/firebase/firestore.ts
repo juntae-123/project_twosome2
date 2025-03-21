@@ -9,7 +9,6 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 
-// 🔹 메뉴 가져오기
 export const fetchMenuItems = async () => {
   try {
     console.log("📡 Firestore에서 메뉴 데이터 가져오는 중...");
@@ -33,7 +32,6 @@ export const fetchMenuItems = async () => {
   }
 };
 
-// 🔹 실시간 메뉴 구독
 export const subscribeToMenuItems = (callback: (menuItems: any[]) => void) => {
   return onSnapshot(collection(db, "twosome"), (snapshot) => {
     const menuItems = snapshot.docs.map((doc) => ({

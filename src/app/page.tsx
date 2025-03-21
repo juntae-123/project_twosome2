@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 
 import AdminPage from "./admin/admin";
+import LoginPage from "./login/LoginPage";
 
 interface MenuItem {
   id: string;
@@ -15,7 +16,8 @@ interface MenuItem {
 export default function Home() {
   return (
     <div>
-      <AdminPage />
+      {/* <AdminPage />
+      <LoginPage></LoginPage> */}
     </div>
   );
 }

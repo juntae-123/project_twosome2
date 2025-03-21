@@ -17,7 +17,6 @@ const pagemain = () => {
   const currentIndex = useRef(0);
   const isScrolling = useRef(false);
 
-  // Lenis 부드러운 스크롤
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
