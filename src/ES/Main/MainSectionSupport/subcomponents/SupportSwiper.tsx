@@ -16,7 +16,7 @@ const SupportSwiper = () => {
   const next = () => swiper?.slideNext();
 
   return (
-    <div className=" w-[69%] absolute top-[20%] right-0 max-md:top-[-13%] max-md:left-[-13%] max-md:w-full">
+    <div className=" w-[69%] absolute top-[20%] right-0 max-md:top-12 max-md:left-[-59.5%] max-md:w-full">
       <Swiper
         className="w-[1600px] h-[600px] mr-0 relative"
         loop={true}
@@ -30,7 +30,7 @@ const SupportSwiper = () => {
       >
         {slideArr.map((v) => {
           return (
-            <SwiperSlide className="text-center text-lg bg-white flex justify-center items-end ">
+            <SwiperSlide className="text-center text-lg bg-white flex justify-center items-end">
               <SwiperSlideContents {...v} />
             </SwiperSlide>
           );

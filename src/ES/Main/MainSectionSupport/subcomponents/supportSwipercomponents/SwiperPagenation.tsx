@@ -18,8 +18,8 @@ const SwiperPagenation = ({
   return (
     <>
       <div
-        className={`w-[312px] flex justify-between ${TwosomeTwFontSizes["fontSize-18px"]} bg-black ${TwosomeTwColors["color-white"]} p-3 font-bold absolute bottom-0 right-[30%] z-10
-        max-md:w-[354px] max-md:relative max-md:bottom-12 max-md:right-[-25%]`}
+        className={`w-[312px] flex justify-between ${TwosomeTwFontSizes["fontSize-18px"]} bg-black ${TwosomeTwColors["color-white"]} p-3 font-bold absolute bottom-0 right-[31%] z-10
+        max-md:w-[354px] max-md:bottom-[42%] max-md:left-[62%]`}
       >
         <button onClick={prev}>
           <GoArrowLeft />
