@@ -10,7 +10,11 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <PageNotice></PageNotice>
+      <div className="flex felx-col gap-50">
+        <PageDel></PageDel>
+        <PageDesert></PageDesert>
+        <PageStory></PageStory>
+      </div>
     </>
   );
 }
