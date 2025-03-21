@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 "use client";
 <<<<<<< HEAD
+=======
+import BrandPage from "@/HB/components/pageBrand/page";
+import PageDel from "@/HB/components/pageDel/page";
+import PageDesert from "@/HB/components/pageDesert/page";
+import Pagevision from "@/HB/components/pageIntro/page";
+import PageStory from "@/HB/components/pageMenu/page";
+import PageNotice from "@/HB/components/pageNotice/page";
+
+import Link from "next/link";
+>>>>>>> origin/my-LHB
 
 import React, { useEffect, useState } from "react";
 import { fetchMenuItems } from "@/firebase/firestore";
@@ -22,6 +33,7 @@ interface MenuItem {
 =======
 >>>>>>> origin/hg
 export default function Home() {
+<<<<<<< HEAD
   return (
 <<<<<<< HEAD
     <div>
@@ -35,4 +47,7 @@ export default function Home() {
     </>
 >>>>>>> origin/hg
   );
+=======
+  return <></>;
+>>>>>>> origin/my-LHB
 }

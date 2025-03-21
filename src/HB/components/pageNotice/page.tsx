@@ -1,7 +1,7 @@
 "use client";
-import { TwosomeTwFontSizes } from "@/common/tailstyles";
+
 import NoticeText from "../subComponents/notice";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+
 import Title from "../subComponents/title";
 import NoticeInput from "../subComponents/noticeInput";
 import { useState } from "react";
@@ -22,7 +22,7 @@ const PageNotice = () => {
           setSearchTerm={setSearchTerm}
           onSearch={handleSearch} // 검색 실행 함수 전달
         />
-        <NoticeText searchQuery={searchQuery} />{" "}
+        <NoticeText searchQuery={searchQuery} />
         {/* 실제 검색 실행된 값만 전달 */}
       </div>
     </>
