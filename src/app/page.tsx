@@ -15,9 +15,15 @@ interface MenuItem {
 
 export default function Home() {
   return (
+<<<<<<< HEAD
     <div>
       {/* <AdminPage />
       <LoginPage></LoginPage> */}
     </div>
+=======
+    <>
+      <PageDesert></PageDesert>
+    </>
+>>>>>>> origin/my-LHB
   );
 }
