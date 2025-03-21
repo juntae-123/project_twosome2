@@ -12,20 +12,14 @@ type menuprops = {
   text: string;
 };
 
-type coffeeProps = {
-  img: string;
-  text1: string;
-  name: string;
-  text2: string;
-  text3: string;
-};
-
 interface MenuItem {
+  menu: string;
   id: string;
   ename: string;
   pricename: string;
   explanation: string;
   imgurl: string;
+  details: string;
 }
 
 const SgCoffee = ({ title, text }: menuprops) => {
@@ -35,7 +29,6 @@ const SgCoffee = ({ title, text }: menuprops) => {
     const loadMenu = async () => {
       const fetchedMenu = await fetchMenuItems(); // fetchedMenu 타입을 명시적으로 MenuItem[]로 지정
       setMenuItems(fetchedMenu);
-      console.log(fetchedMenu[0].menu);
     };
 
     loadMenu();
@@ -43,10 +36,11 @@ const SgCoffee = ({ title, text }: menuprops) => {
 
   const name =
     text == "디저트이야기"
-      ? desertMenu
+      ? menuItems.filter((v) => v.menu == "desert")
       : text == "델리이야기"
-      ? deliMenu
-      : coffeeMenu;
+      ? menuItems.filter((v) => v.menu == "deli")
+      : menuItems.filter((v) => v.menu == "drink");
+  console.log(name);
   return (
     <div className="max-w-[1215px] flex flex-col items-center md:items-start mb-20">
       <h2
@@ -55,7 +49,7 @@ const SgCoffee = ({ title, text }: menuprops) => {
         {title}
       </h2>
 
-      <div className="grid grid-cols-1 items-start ml-10 md:ml-0 md:h-130 gap-10 md:grid-cols-4 justify-between">
+      <div className="grid grid-cols-1 items-start ml-4 md:ml-0 md:h-130 gap-10 md:grid-cols-4 justify-between">
         {name.map((v, index) => (
           <SgCoffeeCard key={index} {...v} />
         ))}

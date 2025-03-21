@@ -4,13 +4,20 @@ import PageDesert from "@/HB/components/pageDesert/page";
 import Pagevision from "@/HB/components/pageIntro/page";
 import PageStory from "@/HB/components/pageMenu/page";
 import PageNotice from "@/HB/components/pageNotice/page";
-import NoticeText from "@/HB/components/subComponents/notice";
+
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <PageStory></PageStory>
+      <div className="flex  flex-col gap-1000">
+        <PageStory></PageStory>
+        <PageDesert></PageDesert>
+        <Pagevision></Pagevision>
+
+        <PageDel></PageDel>
+        <PageNotice></PageNotice>
+      </div>
     </>
   );
 }
