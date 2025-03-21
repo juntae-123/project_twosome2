@@ -1,139 +1,103 @@
-"use client";
+// "use client";
 
-import React, { useEffect, useState } from "react";
-
-import Sectiononeswiper from "@/HG/sections/Sectiononeswiper";
-import Sectiontwo from "@/HG/sections/Sectiontwo";
-import Sectionthree from "@/HG/sections/Sectionthree";
-import MainBtmPage from "@/ES/page";
-
-interface User {
-  name: string;
-  age: number;
-}
+// import MainBtmPage from "@/ES/page";
+// import Sectiononeswiper from "@/HG/sections/Sectiononeswiper";
+// import Sectionthree from "@/HG/sections/Sectionthree";
+// import Sectiontwo from "@/HG/sections/Sectiontwo";
 
 // export default function Home() {
 //   return (
 //     <>
 //       <Sectiononeswiper />
-
 //       <Sectiontwo />
-
-//       <Sectionthree img="sectionthree1" />
-
+//       <Sectionthree img={"sectionthree1"} />
 //       <MainBtmPage />
 //     </>
 //   );
 // }
 
-// const Page: React.FC = () => {
-//   const [user, setUser] = useState<User | null>(null);
+// "use client";
+
+// import { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// import MainBtmPage from "@/ES/page";
+// import Sectiononeswiper from "@/HG/sections/Sectiononeswiper";
+// import Sectionthree from "@/HG/sections/Sectionthree";
+// import Sectiontwo from "@/HG/sections/Sectiontwo";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// export default function Home() {
+//   const sectionRefs = useRef<HTMLElement[]>([]);
 
 //   useEffect(() => {
-//     console.log("🔄 useEffect 실행됨! Firestore 데이터 요청 중..."); // ✅ 실행 확인 로그 추가
+//     // 기존 ScrollTrigger 제거
+//     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
-//     const loadUser = async () => {
-//       const fetchedUser = await fetchUsers();
-//       console.log("🎯 가져온 데이터:", fetchedUser); // ✅ 데이터 확인 로그
-//       setUser(fetchedUser);
-//     };
+//     sectionRefs.current.forEach((el) => {
+//       if (!el) return;
 
-//     loadUser();
+//       ScrollTrigger.create({
+//         trigger: el,
+//         start: "top top",
+//         end: "bottom top",
+//         pin: true,
+//         pinSpacing: true,
+//         scrub: true,
+//         // markers: true, // 디버깅용
+//       });
+//     });
 //   }, []);
 
 //   return (
-//     <div>
-//       <h1>사용자 정보</h1>
-//       {user ? (
-//         <p>
-//           이름: {user.name} <br />
-//           나이: {user.age}세 아이디:{user.ID}
-//         </p>
-//       ) : (
-//         <p>❌ Firestore에 데이터가 없습니다.</p>
-//       )}
-//     </div>
+//     <>
+//       <section
+//         ref={(el) => {
+//           if (el) sectionRefs.current[0] = el;
+//         }}
+//         className="w-full h-screen"
+//       >
+//         <Sectiononeswiper />
+//       </section>
+
+//       <section
+//         ref={(el) => {
+//           if (el) sectionRefs.current[1] = el;
+//         }}
+//         className="w-full h-screen"
+//       >
+//         <Sectiontwo />
+//       </section>
+
+//       <section
+//         ref={(el) => {
+//           if (el) sectionRefs.current[2] = el;
+//         }}
+//         className="w-full h-screen"
+//       >
+//         <Sectionthree img={"sectionthree1"} />
+//       </section>
+
+//       <section
+//         ref={(el) => {
+//           if (el) sectionRefs.current[3] = el;
+//         }}
+//         className="w-full h-screen"
+//       >
+//         <MainBtmPage />
+//       </section>
+//     </>
 //   );
-// };
-
-//export default home;
-
-import { fetchMenuItems } from "@/firebase/firestore";
-import AdminPage from "./admin/admin";
-import Link from "next/link";
-
-interface MenuItem {
-  id: string;
-  ename: string;
-  pricename: string;
-  explanation: string;
-  imgurl: string;
-}
+// }
+"use client";
+import Pagemain from "@/HG/components/Pagemain";
 
 export default function Home() {
-  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
-
-  useEffect(() => {
-    console.log("🔄 Firestore에서 메뉴 데이터 요청 중...");
-
-    const loadMenuItems = async () => {
-      const fetchedMenuItems = await fetchMenuItems();
-      console.log("🎯 가져온 메뉴 데이터:", fetchedMenuItems);
-      setMenuItems(fetchedMenuItems);
-    };
-
-    loadMenuItems();
-  }, []);
-
   return (
-    <div>
-      <div>
-        <h1>🔥 투썸플레이스 메뉴</h1>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "20px",
-          }}
-        >
-          {menuItems.length === 0 ? (
-            <p>❌ Firestore에 데이터가 없습니다.</p>
-          ) : (
-            menuItems.map((item) => (
-              <div
-                key={item.id}
-                style={{
-                  border: "1px solid #ddd",
-                  padding: "10px",
-                  borderRadius: "8px",
-                  textAlign: "center",
-                }}
-              >
-                <img
-                  src={item.imgurl}
-                  alt={item.ename}
-                  style={{ width: "100%", borderRadius: "8px" }}
-                />
-                <h3>{item.pricename}</h3>
-                <p>{item.explanation}</p>
-              </div>
-            ))
-          )}
-        </div>
-
-        {/* ✅ 관리자 페이지로 이동 버튼 */}
-        {/* <Link href="/admin">
-         <button
-           style={{ padding: "10px 20px", fontSize: "16px", marginTop: "20px" }}
-         >
-          관리자 페이지로 이동
-         </button>
-      </Link> */}
-      </div>
-      <div>
-        <AdminPage />
-      </div>
-    </div>
+    <>
+      <Pagemain />
+    </>
   );
 }
