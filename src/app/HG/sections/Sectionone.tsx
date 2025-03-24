@@ -11,6 +11,8 @@ const Sectionone = ({ img }: sectiononeProps) => {
       style={{
         backgroundImage: `url(${ImageMap[img]})`,
         backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     ></picture>
   );

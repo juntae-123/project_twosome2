@@ -31,8 +31,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <header className="flex justify-center items-center fixed top-0 left-0 w-[1920px] h-[100px] z-30">
-          <Header img="logowhite" button="logomenu" />
+        <header className="flex justify-between items-center fixed top-0 left-0 w-[1920px] h-[100px] z-30">
+          <Header button="logomenu" />
         </header>
         {children}
         <div style={{ margin: "0" }}>

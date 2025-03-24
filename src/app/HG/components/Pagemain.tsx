@@ -11,32 +11,25 @@ import FranchiseSection from "@/app/ES/Main/MainSectionFranchise/page";
 import NewsSection from "@/app/ES/Main/MainSectionNews/page";
 gsap.registerPlugin(ScrollTrigger);
 
-const Pagemain = () => {
+const PageMain = () => {
   const sectionRefs = useRef<HTMLElement[]>([]);
-  const lenisRef = useRef<Lenis | null>(null);
+  // const lenisRef = useRef<Lenis | null>(null);
   const currentIndex = useRef(0);
   const isScrolling = useRef(false);
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+  const scrollToSection = (index: number) => {
+    const section = sectionRefs.current[index];
+    if (!section) return;
 
-    lenisRef.current = lenis;
+    section.scrollIntoView({ behavior: "smooth" });
+    currentIndex.current = index;
+    isScrolling.current = true;
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 1000);
+  };
 
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
-  // ScrollTrigger Pin 설정
   useEffect(() => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
@@ -48,27 +41,12 @@ const Pagemain = () => {
         end: "top top",
         pin: true,
         pinSpacing: true,
+        scrub: true,
       });
     });
   }, []);
 
-  // 휠 이벤트 감지하여 1px 스크롤 시 섹션 전환
   useEffect(() => {
-    if (!lenisRef.current) return;
-
-    const scrollToSection = (index: number) => {
-      const section = sectionRefs.current[index];
-      if (!section) return;
-
-      lenisRef.current!.scrollTo(section);
-      currentIndex.current = index;
-      isScrolling.current = true;
-
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 1000); // lenis duration
-    };
-
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
 
@@ -78,7 +56,6 @@ const Pagemain = () => {
       if (direction === 0) return;
 
       const next = currentIndex.current + direction;
-
       if (next < 0 || next >= sectionRefs.current.length) return;
 
       scrollToSection(next);
@@ -93,6 +70,7 @@ const Pagemain = () => {
   return (
     <main className="w-full">
       <section
+        id="section1"
         ref={(el) => {
           if (el) sectionRefs.current[0] = el;
         }}
@@ -102,6 +80,7 @@ const Pagemain = () => {
       </section>
 
       <section
+        id="section2"
         ref={(el) => {
           if (el) sectionRefs.current[1] = el;
         }}
@@ -111,6 +90,7 @@ const Pagemain = () => {
       </section>
 
       <section
+        id="section3"
         ref={(el) => {
           if (el) sectionRefs.current[2] = el;
         }}
@@ -120,6 +100,7 @@ const Pagemain = () => {
       </section>
 
       <section
+        id="section4"
         ref={(el) => {
           if (el) sectionRefs.current[3] = el;
         }}
@@ -127,7 +108,9 @@ const Pagemain = () => {
       >
         <SupportSection />
       </section>
+
       <section
+        id="section5"
         ref={(el) => {
           if (el) sectionRefs.current[4] = el;
         }}
@@ -135,7 +118,9 @@ const Pagemain = () => {
       >
         <FranchiseSection />
       </section>
+
       <section
+        id="section6"
         ref={(el) => {
           if (el) sectionRefs.current[5] = el;
         }}
@@ -146,4 +131,5 @@ const Pagemain = () => {
     </main>
   );
 };
-export default Pagemain;
+
+export default PageMain;

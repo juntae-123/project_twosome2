@@ -6,7 +6,7 @@ import Title from "../subComponents/title";
 import NoticeInput from "../subComponents/noticeInput";
 import { useState } from "react";
 
-const PageNotice = () => {
+export default function PageNotice() {
   const [searchTerm, setSearchTerm] = useState(""); // 검색어 상태 관리
   const [searchQuery, setSearchQuery] = useState(""); // 실제 검색 실행된 값
 
@@ -27,6 +27,4 @@ const PageNotice = () => {
       </div>
     </>
   );
-};
-
-export default PageNotice;
+}

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Controller } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { ImagegatherTwo, ImageMap, imageNames } from "../../../common/Image";
+import { ImagegatherTwo, ImageMap, imageNames } from "@/common/Image";
 
 const Sectiontwo = () => {
   const [category, setCategory] = useState<"coffee" | "dessert" | "deli">(
@@ -23,7 +23,10 @@ const Sectiontwo = () => {
       title: "DESSERT STORY",
       description: "달콤함으로 완성되는 완벽한 순간",
     },
-    deli: { title: "DELI STORY", description: "든든하고 맛있는 조화로운 한끼" },
+    deli: {
+      title: "DELI STORY",
+      description: "든든하고 맛있는 조화로운 한끼",
+    },
   };
 
   const images: Record<"coffee" | "dessert" | "deli", ImagegatherTwo[]> = {
@@ -49,10 +52,42 @@ const Sectiontwo = () => {
   const currentImages = images[category];
 
   return (
-    <section className="w-full min-h-screen flex justify-center items-start bg-white">
-      <div className="flex max-w-[1600px] px-14 pt-45 gap-20">
-        <div className="w-[800px] shrink-0 sticky self-start z-10 ml-30">
-          <h1 className="text-8xl font-extrabold leading-none mb-8 relative after:content-[''] after:inline-block after:w-4 after:h-4 after:bg-red-500 after:ml-3">
+    <section className="w-full min-h-screen md:flex justify-center bg-white">
+      <div className="flex flex-col md:flex-row max-w-[1600px] w-full px-4 md:px-14 pt-20 md:gap-20">
+        <div className="w-full text-center  md:hidden">
+          <h1 className="text-3xl text-left font-black mb-3 ">
+            MENU STORY
+            <span className="inline-block w-2 h-2 bg-red-500 ml-1 rounded-full align-middle" />
+          </h1>
+
+          <ul className="flex justify-center gap-6 text-sm font-semibold mb-3">
+            {(["coffee", "dessert", "deli"] as const).map((i) => (
+              <li key={i}>
+                <button
+                  onClick={() => {
+                    setCategory(i);
+                    setActiveIndex(0);
+                    swiperRef.current?.slideTo(0);
+                  }}
+                  className={`max-[800px]:text-left transition duration-200 ${
+                    category === i
+                      ? "text-black underline"
+                      : "text-gray-400 hover:text-black text-left"
+                  }`}
+                >
+                  {categoryDescriptions[i].title}
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <p className="text-xs md: bg-gray-100 h-15 flex justify-center items-center text-gray-500 font-medium mb: max-w-[500px]">
+            {categoryDescriptions[category].description}
+          </p>
+        </div>
+
+        <div className="hidden md:block w-[800px] sticky self-start z-10 ">
+          <h1 className="text-5xl md:text-8xl font-extrabold leading-none mb-8 relative after:content-[''] after:inline-block after:w-4 after:h-4 after:bg-red-500 after:ml-3">
             MENU STORY
           </h1>
           <ul className="flex flex-col gap-20 mt-8">
@@ -83,60 +118,42 @@ const Sectiontwo = () => {
             ))}
           </ul>
         </div>
-        <div className="flex flex-row -ml-210">
-          <div className="flex flex-col">
-            <Swiper
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
-              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-              modules={[Navigation, Controller]}
-              className="w-[450px] h-[450px]"
+
+        <div className="flex flex-col items-center justify-center w-full">
+          <Swiper
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+            modules={[Navigation, Controller]}
+            className="w-full max-w-[500px] h-[300px] md:h-[450px]"
+          >
+            {currentImages.map((i, v) => (
+              <SwiperSlide key={v}>
+                <img
+                  src={ImageMap[i]}
+                  alt={imageNames[i]}
+                  className="w-full h-full object-cover"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className="relative z-10 flex items-center justify-between bg-black text-white px-4 py-4 rounded-md w-full m-0 md:-mt-8 max-w-[500px] md:max-w-[400px]">
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="text-2xl font-bold px-4"
             >
-              {currentImages.map((i, v) => (
-                <SwiperSlide key={v}>
-                  <img
-                    src={ImageMap[i]}
-                    alt={imageNames[i]}
-                    className="w-full h-full object-cover"
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <div className="relative z-10 flex items-center justify-between bg-black text-white px-4 py-4 rounded-md w-[400px] mx-auto">
-              <button
-                onClick={() => swiperRef.current?.slidePrev()}
-                className="text-2xl font-bold px-4"
-              >
-                ←
-              </button>
-              <p className="text-sm font-semibold text-center whitespace-nowrap">
-                {imageNames[currentImages[activeIndex]]}
-              </p>
-              <button
-                onClick={() => swiperRef.current?.slideNext()}
-                className="text-2xl font-bold px-4"
-              >
-                →
-              </button>
-            </div>
+              ←
+            </button>
+            <p className="text-sm font-semibold text-center whitespace-nowrap">
+              {imageNames[currentImages[activeIndex]]}
+            </p>
+            <button
+              onClick={() => swiperRef.current?.slideNext()}
+              className="text-2xl font-bold px-4"
+            >
+              →
+            </button>
           </div>
-          {/* 리스트 수정해야할 코드 */}
-          {/* <div className="w-[100px] h-[100px]">
-            <Swiper slidesPerView={5} spaceBetween={10} className="mt-6">
-              {currentImages.map((i, v) => (
-                <SwiperSlide key={v}>
-                  <button onClick={() => swiperRef.current?.slideTo(v)}>
-                    <img
-                      src={ImageMap[i]}
-                      alt={imageNames[i]}
-                      className={`w-full h-24 object-cover border-2 ${
-                        activeIndex === v ? "border-red-300" : "border-gray-300"
-                      }`}
-                    />
-                  </button>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div> */}
         </div>
       </div>
     </section>

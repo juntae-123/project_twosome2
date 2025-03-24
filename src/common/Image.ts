@@ -22,7 +22,8 @@ export type Imagegather =
   | "sectiontwo14"
   | "sectiontwo15"
   | "sectiontwo16"
-  | "sectionthree1";
+  | "sectionthree1"
+  | "mobilesection1";
 
 export const ImageMap: Record<Imagegather, string> = {
   logowhite:
@@ -72,6 +73,8 @@ export const ImageMap: Record<Imagegather, string> = {
     "https://www.twosome.co.kr/resources/images/main/menu_deli8.jpg",
   sectionthree1:
     "https://www.twosome.co.kr/resources/images/main/main_alist_pc.jpg",
+  mobilesection1:
+    "https://mcdn.twosome.co.kr/upload/MODS0030/202106/MODS0030_20210617220429_thmuCtGg",
 };
 export type ImagegatherTwo =
   | "sectiontwo1"

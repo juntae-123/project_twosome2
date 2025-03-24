@@ -1,0 +1,4 @@
+.swiper-button-prev:not(.custom-swiper-prev),
+.swiper-button-next:not(.custom-swiper-next) {
+  display: none;
+}
