@@ -1,9 +1,6 @@
 "use client";
 import { TwosomeTwColors, TwosomeTwFontSizes } from "@/common/tailstyles";
 import SgCoffeeCard from "./sgCoffeeCard";
-import coffeeMenu from "./coffeemenu";
-import desertMenu from "./desertmenu";
-import deliMenu from "./delimenu";
 import React, { useEffect, useState } from "react";
 import { fetchMenuItems } from "@/firebase/firestore";
 

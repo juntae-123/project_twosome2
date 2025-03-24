@@ -20,10 +20,9 @@ const PageNotice = () => {
         <NoticeInput
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
-          onSearch={handleSearch} // 검색 실행 함수 전달
+          onSearch={handleSearch}
         />
         <NoticeText searchQuery={searchQuery} />
-        {/* 실제 검색 실행된 값만 전달 */}
       </div>
     </>
   );
