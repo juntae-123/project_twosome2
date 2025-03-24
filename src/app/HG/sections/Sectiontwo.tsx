@@ -52,15 +52,15 @@ const Sectiontwo = () => {
   const currentImages = images[category];
 
   return (
-    <section className="w-full min-h-screen md:flex justify-center bg-white">
-      <div className="flex flex-col md:flex-row max-w-[1600px] w-full px-4 md:px-14 pt-20 md:gap-20">
-        <div className="w-full text-center  md:hidden">
-          <h1 className="text-3xl text-left font-black mb-3 ">
+    <section className="w-full min-h-screen md:flex justify-center items-center bg-white">
+      <div className="flex flex-col md:flex-row max-w-[1600px] w-full px-4 md:px-14 pt-40 md:gap-20 md:flex justify-center items-center">
+        <div className="w-full text-center md:hidden ml-5">
+          <h1 className="w-[360px] text-3xl text-left font-black mb-10 ml-14">
             MENU STORY
-            <span className="inline-block w-2 h-2 bg-red-500 ml-1 rounded-full align-middle" />
+            <span className="inline-block w-3 h-3 bg-red-500 ml-1 align-middle" />
           </h1>
 
-          <ul className="flex justify-center gap-6 text-sm font-semibold mb-3">
+          <ul className="flex gap-6 text-sm font-bold mb-3 ml-14">
             {(["coffee", "dessert", "deli"] as const).map((i) => (
               <li key={i}>
                 <button
@@ -81,7 +81,7 @@ const Sectiontwo = () => {
             ))}
           </ul>
 
-          <p className="text-xs md: bg-gray-100 h-15 flex justify-center items-center text-gray-500 font-medium mb: max-w-[500px]">
+          <p className="text-xs md: bg-gray-100 h-15 flex justify-center items-center text-gray-500 font-medium mb: max-w-[500px] ml-12">
             {categoryDescriptions[category].description}
           </p>
         </div>

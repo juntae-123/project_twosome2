@@ -39,7 +39,7 @@ const Header = ({ button }: HeaderProps) => {
           />
         </a>
 
-        <ul className="flex flex-row gap-10 text-lg font-bold">
+        <ul className="flex hidden gap-10 whitespace-nowrap text-lg font-bold 2xl:flex ">
           <Link href="/HB/componets/pageIntro">투썸플레이스 소개</Link>
           <Link href="/HB/componets/pageMenu">메뉴이야기</Link>
           <Link href="/HB/componets/pageBrand">브랜드 지원</Link>
@@ -51,11 +51,15 @@ const Header = ({ button }: HeaderProps) => {
         </ul>
 
         <div className="flex gap-10 items-center">
-          <button className="border rounded-3xl px-8 py-1 ml-12 transition-colors duration-300">
+          <button className="border rounded-3xl px-8 py-1  transition-colors duration-300">
             English
           </button>
           <button>
-            <img className="h-6 w-6" src={ImageMap[button]} alt="메뉴 버튼" />
+            <img
+              className="h-6 w-6 mr-3"
+              src={ImageMap[button]}
+              alt="메뉴 버튼"
+            />
           </button>
         </div>
       </div>
