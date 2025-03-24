@@ -14,10 +14,10 @@ export const desertData = {
   text: "디저트이야기",
   title: "TWOSOME DESERT STORY",
   main: "시그니처 커피&음료",
-  intro:
-    "내 취향이 담긴 커피, 투썸플레이스에는 내 취향을 담아 섬세하게 만든 나만의 커피가 있습니다.",
+  intro: "투썸플레이스의 다양한프리미엄 케이크&디저트를만나보세요.",
 
-  explanation: "투썸플레이스의 다양한프리미엄 케이크&디저트를만나보세요.",
+  explanation:
+    "유러피언 디저트의 본질을 추구한 고급 원재료와 차별화된 레시피를 더한 프리미엄 케이크, 트렌디한 감각과 스타일로 새로운 즐거움을 주는 스몰 디저트까지 투썸플레이스의 자부심이 담긴 다양한 디저트를 만나볼 수 있습니다.",
   img: "https://www.twosome.co.kr/resources/images/content/img_p_dessertstory.jpg",
 };
 

@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, enableNetwork } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "YOUR_REAL_API_KEY",
+  apiKey: "AIzaSyA0rlSvoRfW39IrqKiFo7ctEsOCDVir3tU",
   authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
   projectId: "twosome-1e8cb",
   storageBucket: "YOUR_PROJECT_ID.appspot.com",
@@ -10,13 +11,12 @@ const firebaseConfig = {
   appId: "YOUR_APP_ID",
 };
 
-// Firebase 초기화
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// 🔹 Firestore 온라인 모드 활성화
 enableNetwork(db).catch((error) => {
-  console.error("Firestore 네트워크 활성화 실패:", error);
+  console.error("네트워크 실패:", error);
 });
+const auth = getAuth(app);
 
-export { db };
+export { db, auth };

@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "@/app/ES/Footer/page";
+
+import AuthStatus from "./login/AuthStatus";
+import LoginPage from "./login/LoginPage";
+import SignupPage from "./login/signup";
 import Header from "@/header/Header";
+import Footer from "./ES/Footer/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +30,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <header className="flex justify-center items-center fixed top-0 left-0 w-[1920px] h-[100px] z-30">
           <Header img="logowhite" button="logomenu" />
         </header>
         {children}
-        <Footer></Footer>
+        <div style={{ margin: "0" }}>
+          <Footer />
+        </div>
       </body>
     </html>
   );
