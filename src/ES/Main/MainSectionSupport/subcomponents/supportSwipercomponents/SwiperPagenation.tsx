@@ -16,24 +16,22 @@ const SwiperPagenation = ({
   swiper,
 }: SwiperPagenationProps) => {
   return (
-    <>
-      <div
-        className={`w-[312px] flex justify-between ${TwosomeTwFontSizes["fontSize-18px"]} bg-black ${TwosomeTwColors["color-white"]} p-3 font-bold absolute bottom-0 right-[31%] z-10
-        max-md:w-[354px] max-md:bottom-[42%] max-md:left-[62%]`}
-      >
-        <button onClick={prev}>
-          <GoArrowLeft />
-        </button>
-        <div className="flex gap-1">
-          <span>{swiperIndex + 1}</span>
-          <span className="text-[#959595]">/</span>
-          <span className="text-[#959595]">{swiper?.slides.length}</span>
-        </div>
-        <button onClick={next}>
-          <GoArrowRight />
-        </button>
+    <div
+      className={`w-[312px] flex justify-between ${TwosomeTwFontSizes["fontSize-18px"]} bg-black ${TwosomeTwColors["color-white"]} p-3 font-bold absolute bottom-0 left-1/2 -translate-x-1/2 z-10
+      max-md:w-[336px] max-md:bottom-40 max-md:left-1/2 max-md:-translate-x-1/2`}
+    >
+      <button onClick={prev}>
+        <GoArrowLeft />
+      </button>
+      <div className="flex gap-1">
+        <span>{swiperIndex + 1}</span>
+        <span className="text-[#959595]">/</span>
+        <span className="text-[#959595]">{swiper?.slides.length}</span>
       </div>
-    </>
+      <button onClick={next}>
+        <GoArrowRight />
+      </button>
+    </div>
   );
 };
 

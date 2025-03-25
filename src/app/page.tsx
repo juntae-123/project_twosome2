@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "use client";
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,4 +97,10 @@ export default function Home() {
 =======
   return <></>;
 >>>>>>> origin/my-LHB
+=======
+import MainBtmPage from "@/ES/page";
+
+export default function Home() {
+  return <MainBtmPage />;
+>>>>>>> 8ab16e7dd1d8155ded74adf2bb86bc77f7a881ee
 }

@@ -7,8 +7,8 @@ export type SwiperSlideContentsProps = {
   subImage: string;
   title: string;
   dsc: string;
-  id: string;
 };
+
 const SwiperSlideContents = ({
   mainImage,
   subImage,
@@ -16,13 +16,13 @@ const SwiperSlideContents = ({
   dsc,
 }: SwiperSlideContentsProps) => {
   return (
-    <div className="flex gap-20 items-end max-md:flex-col max-md:gap-0">
+    <div className="flex gap-24 items-end max-md:flex-col max-md:gap-6">
       <img
-        className="w-[552px] h-[552px] max-md:w-[355px] max-md:h-[355px] object-cover block"
+        className="w-[552px] h-[552px] max-md:w-full max-md:h-[336px] object-cover block"
         src={mainImage}
         alt=""
       />
-      <div className="flex flex-col gap-4  mb-28 ">
+      <div className="flex flex-col gap-4 mb-28 max-md:mb-0">
         <img
           className="w-[62px] h-[100px] object-cover max-md:w-[36px] max-md:h-[36px]"
           src={subImage}
