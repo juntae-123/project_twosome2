@@ -10,6 +10,7 @@ import NoticeInpPage from "@/HB/components/pageNotice/[id]/page";
 import PageNotice from "@/HB/components/pageNotice/page";
 >>>>>>> origin/my-LHB
 
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import Pagemain from "@/HG/components/Pagemain";
 import AdminPage from "./admin/admin";
@@ -40,6 +41,15 @@ export default function Home() {
         {/* <PageDesert></PageDesert> */}
       </>
     </>
+=======
+import Pagemain from "@/app/HG/components/Pagemain";
+
+export default function Home() {
+  return (
+    <div>
+      <Pagemain />
+    </div>
+>>>>>>> origin/hg
   );
 =======
   return <></>;
