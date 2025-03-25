@@ -1,30 +1,19 @@
 "use client";
-import { useEffect, useState } from "react";
-import FranchiseTitle from "./subcomponents/FranchiseTitle";
-import { GoArrowRight } from "react-icons/go";
-import FranchiseItem from "./subcomponents/FranchiseItem";
 import { TwosomeTwColors, TwosomeTwFontSizes } from "@/common/tailstyles";
+import FranchiseTitle from "./subcomponents/FranchiseTitle";
+import FranchiseItem from "./subcomponents/FranchiseItem";
+import FranchiseButton from "./subcomponents/FranchiseButton";
+import useLoopScroll from "./subcomponents/useLoopScroll";
 
 const FranchiseSection = () => {
-  // setInterval로 16ms마다 가로위치(offsetX)를 -1씩 줄여서 왼쪽으로 이동시키기
-  const [offsetX, setOffsetX] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setOffsetX((prev) => {
-        const newOffset = prev - 1;
-        // -window.innerWidth 에 도달하면 0으로 리셋 (무한루프)
-        return newOffset <= -window.innerWidth ? 0 : newOffset;
-      });
-    }, 16);
-    return () => clearInterval(interval);
-  }, []);
+  const offsetX = useLoopScroll();
 
   return (
-    <section className="relative h-screen overflow-hidden bg-[#f5f5f5] max-md:h-[567px] ">
+    <section className="relative h-screen overflow-hidden bg-[#f5f5f5] max-md:h-[567px]">
       <div
         className="absolute top-0 left-0 flex h-full w-[200vw] max-md:gap-10"
         style={{
-          transform: `translateX(${offsetX}px)`, // offsetX 값에 맞게 가로로 이동시키기기
+          transform: `translateX(${offsetX}px)`,
         }}
       >
         <FranchiseItem />
@@ -32,7 +21,7 @@ const FranchiseSection = () => {
       </div>
 
       <div
-        className={`relative z-10 flex flex-col items-center justify-center h-full text-center ${TwosomeTwColors["color-black"]} `}
+        className={`relative z-10 flex flex-col items-center justify-center h-full text-center ${TwosomeTwColors["color-black"]}`}
       >
         <FranchiseTitle />
         <p
@@ -49,20 +38,8 @@ const FranchiseSection = () => {
         <div
           className={`mt-6 flex gap-4 ${TwosomeTwFontSizes["fontSize-20px"]} font-semibold`}
         >
-          <button
-            className="border-2 border-black px-6 py-3 bg-white flex items-center gap-[16px]
-          hover:bg-black hover:text-white max-md:text-sm"
-          >
-            <span>창업안내 바로가기</span>
-            <GoArrowRight className="max-md:hidden" />
-          </button>
-          <button
-            className="border-2 border-black px-6 py-3 bg-white flex items-center gap-[16px]
-          hover:bg-black hover:text-white max-md:text-sm"
-          >
-            <span>가맹상담 신청</span>
-            <GoArrowRight className="max-md:hidden" />
-          </button>
+          <FranchiseButton label="창업안내 바로가기" duration={300} />
+          <FranchiseButton label="가맹상담 신청" duration={500} />
         </div>
       </div>
     </section>

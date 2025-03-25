@@ -31,7 +31,7 @@ export default function RootLayout({
           <Header img="logowhite" button="logomenu" />
         </header>
         {children}
-        <Footer></Footer>
+        <Footer />
       </body>
     </html>
   );

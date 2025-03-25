@@ -16,33 +16,42 @@ const SupportSwiper = () => {
   const next = () => swiper?.slideNext();
 
   return (
-    <div className=" w-[69%] absolute top-[20%] right-0 max-md:top-12 max-md:left-[-59.5%] max-md:w-full">
-      <Swiper
-        className="w-[1600px] h-[600px] mr-0 relative"
-        loop={true}
-        modules={[Navigation, Pagination]}
-        spaceBetween={300}
-        slidesPerView={1.6}
-        // index 변경시 감지하는 이벤트
-        onActiveIndexChange={(e) => setSwiperIndex(e.realIndex)}
-        // 스와이퍼 활성화시 작동
-        onSwiper={(e) => setSwiper(e)}
-      >
-        {slideArr.map((v) => {
-          return (
-            <SwiperSlide className="text-center text-lg bg-white flex justify-center items-end">
-              <SwiperSlideContents {...v} />
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+    <Swiper
+      className="w-[1600px] h-[600px] relative top-[-27%] left-72 max-md:w-full max-md:h-[505px]
+      max-md:top-[-2%] max-md:left-0"
+      loop={true}
+      modules={[Navigation, Pagination]}
+      spaceBetween={300}
+      breakpoints={{
+        0: {
+          slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 1.6,
+        },
+      }}
+      // index 변경시 감지하는 이벤트
+      onActiveIndexChange={(e) => setSwiperIndex(e.realIndex)}
+      // 스와이퍼 활성화시 작동
+      onSwiper={(e) => setSwiper(e)}
+    >
+      {slideArr.map((v, i) => {
+        return (
+          <SwiperSlide
+            key={i}
+            className="text-center text-lg bg-white flex justify-center items-end"
+          >
+            <SwiperSlideContents {...v} />
+          </SwiperSlide>
+        );
+      })}
       <SwiperPagenation
         prev={prev}
         next={next}
         swiperIndex={swiperIndex}
         swiper={swiper}
       />
-    </div>
+    </Swiper>
   );
 };
 
