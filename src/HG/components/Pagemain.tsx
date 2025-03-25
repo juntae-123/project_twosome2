@@ -1,7 +1,8 @@
+"use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis";
+// import Lenis from "@studio-freight/lenis";
 
 import Sectiononeswiper from "@/HG/sections/Sectiononeswiper";
 import Sectionthree from "@/HG/sections/Sectionthree";
@@ -9,34 +10,28 @@ import Sectiontwo from "@/HG/sections/Sectiontwo";
 import SupportSection from "@/ES/Main/MainSectionSupport/page";
 import FranchiseSection from "@/ES/Main/MainSectionFranchise/page";
 import NewsSection from "@/ES/Main/MainSectionNews/page";
+
 gsap.registerPlugin(ScrollTrigger);
 
-const pagemain = () => {
+const PageMain = () => {
   const sectionRefs = useRef<HTMLElement[]>([]);
-  const lenisRef = useRef<Lenis | null>(null);
+  // const lenisRef = useRef<Lenis | null>(null);
   const currentIndex = useRef(0);
   const isScrolling = useRef(false);
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
+  const scrollToSection = (index: number) => {
+    const section = sectionRefs.current[index];
+    if (!section) return;
 
-    lenisRef.current = lenis;
+    section.scrollIntoView({ behavior: "smooth" });
+    currentIndex.current = index;
+    isScrolling.current = true;
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 1000);
+  };
 
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
-
-  // ScrollTrigger Pin 설정
   useEffect(() => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
@@ -53,23 +48,7 @@ const pagemain = () => {
     });
   }, []);
 
-  // 휠 이벤트 감지하여 1px 스크롤 시 섹션 전환
   useEffect(() => {
-    if (!lenisRef.current) return;
-
-    const scrollToSection = (index: number) => {
-      const section = sectionRefs.current[index];
-      if (!section) return;
-
-      lenisRef.current!.scrollTo(section);
-      currentIndex.current = index;
-      isScrolling.current = true;
-
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 1000); // lenis duration
-    };
-
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
 
@@ -79,7 +58,6 @@ const pagemain = () => {
       if (direction === 0) return;
 
       const next = currentIndex.current + direction;
-
       if (next < 0 || next >= sectionRefs.current.length) return;
 
       scrollToSection(next);
@@ -128,6 +106,7 @@ const pagemain = () => {
       >
         <SupportSection />
       </section>
+
       <section
         ref={(el) => {
           if (el) sectionRefs.current[4] = el;
@@ -136,6 +115,7 @@ const pagemain = () => {
       >
         <FranchiseSection />
       </section>
+
       <section
         ref={(el) => {
           if (el) sectionRefs.current[5] = el;
@@ -147,4 +127,5 @@ const pagemain = () => {
     </main>
   );
 };
-export default pagemain;
+
+export default PageMain;

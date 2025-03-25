@@ -12,7 +12,7 @@ const AuthStatus = () => {
     <div className="text-center py-4">
       {user ? (
         <>
-          <p>{user.email}님 안녕하세요 👋</p>
+          <p>{user.email}님 안녕하세요 </p>
           <LogoutButton />
         </>
       ) : (

@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
+import Pagemain from "@/HG/components/Pagemain";
 import AdminPage from "./admin/admin";
 import LoginPage from "./login/LoginPage";
+import PageDesert from "@/HB/components/pageDesert/page";
+import Sectiontwo from "@/HG/sections/Sectiontwo";
 
 interface MenuItem {
   id: string;
@@ -15,15 +17,17 @@ interface MenuItem {
 
 export default function Home() {
   return (
-<<<<<<< HEAD
-    <div>
-      {/* <AdminPage />
-      <LoginPage></LoginPage> */}
-    </div>
-=======
     <>
-      <PageDesert></PageDesert>
+      <div>
+        {/* <AdminPage />
+        <LoginPage></LoginPage> */}
+        <Sectiontwo />
+      </div>
+
+      <>
+        {/* <Pagemain /> */}
+        {/* <PageDesert></PageDesert> */}
+      </>
     </>
->>>>>>> origin/my-LHB
   );
 }

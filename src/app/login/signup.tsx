@@ -11,7 +11,7 @@ const SignupPage = () => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      alert("회원가입 성공!");
+      alert("회원가입 성공");
     } catch (error: any) {
       alert(`회원가입 실패: ${error.message}`);
     }

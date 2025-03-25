@@ -7,11 +7,11 @@ import NoticeInput from "../subComponents/noticeInput";
 import { useState } from "react";
 
 const PageNotice = () => {
-  const [searchTerm, setSearchTerm] = useState(""); // 검색어 상태 관리
-  const [searchQuery, setSearchQuery] = useState(""); // 실제 검색 실행된 값
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = () => {
-    setSearchQuery(searchTerm); // 검색어 입력 후 엔터 시 반영
+    setSearchQuery(searchTerm);
   };
   return (
     <>
@@ -20,10 +20,9 @@ const PageNotice = () => {
         <NoticeInput
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
-          onSearch={handleSearch} // 검색 실행 함수 전달
+          onSearch={handleSearch}
         />
         <NoticeText searchQuery={searchQuery} />
-        {/* 실제 검색 실행된 값만 전달 */}
       </div>
     </>
   );

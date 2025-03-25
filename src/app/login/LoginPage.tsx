@@ -56,7 +56,6 @@ const LoginPage = () => {
           로그인
         </button>
         <div>
-          {/* 이메일/비밀번호 로그인 폼 */}
           <hr className="my-4" />
           <GoogleLoginButton />
         </div>
