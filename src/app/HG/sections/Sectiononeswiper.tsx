@@ -5,24 +5,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { Swiper as SwiperCore } from "swiper";
 
-// Swiper 스타일 import
 import "swiper/css";
 import "swiper/css/navigation";
 
-// 섹션 컴포넌트 (각 슬라이드 내용)
 import Sectionone from "./Sectionone";
 
 const Sectiononeswiper = () => {
   const swiperRef = useRef<SwiperCore | null>(null);
   const [currentIndex, setCurrentIndex] = useState(1);
-  const totalSlides = 2; // ✅ 슬라이드 수 고정
+  const totalSlides = 2;
 
   useEffect(() => {
     const swiper = swiperRef.current;
     if (!swiper) return;
 
     const updateIndex = () => {
-      setCurrentIndex(swiper.realIndex + 1); // 0-based → 1-based
+      setCurrentIndex(swiper.realIndex + 1);
     };
 
     swiper.on("slideChange", updateIndex);
@@ -34,7 +32,16 @@ const Sectiononeswiper = () => {
 
   return (
     <section className="w-full h-screen relative">
-      <div className="py-5 w-60 absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center justify-between bg-black/60 text-white px-6 py-2 rounded-full min-w-[200px]">
+      <div
+        className="
+          absolute left-1/2 bottom-2 -translate-x-1/2 z-10 
+          flex items-center justify-between 
+          bg-black/60 text-white px-6 py-2 rounded-full 
+          md:bottom-6 md:w-60 
+          sm:bottom-4 sm:w-52
+          w-[180px]
+        "
+      >
         <button className="custom-swiper-prev w-6 h-6">
           <img
             src="https://www.twosome.co.kr/resources/images/main/ico_arrow_left.svg"
@@ -67,7 +74,7 @@ const Sectiononeswiper = () => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
-        style={{ width: "100%", height: "100vh" }}
+        className="w-full h-screen"
       >
         <SwiperSlide>
           <div className="w-full h-full flex items-center justify-center">

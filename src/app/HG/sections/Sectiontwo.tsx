@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Controller } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { ImagegatherTwo, ImageMap, imageNames } from "../Image";
+import { ImagegatherTwo, ImageMap, imageNames } from "@/common/Image";
 
 const Sectiontwo = () => {
   const [category, setCategory] = useState<"coffee" | "dessert" | "deli">(
@@ -52,15 +52,15 @@ const Sectiontwo = () => {
   const currentImages = images[category];
 
   return (
-    <section className="w-full min-h-screen md:flex justify-center bg-white">
-      <div className="flex flex-col md:flex-row max-w-[1600px] w-full px-4 md:px-14 pt-20 md:gap-20">
-        <div className="w-full text-center  md:hidden">
-          <h1 className="text-3xl text-left font-black mb-3 ">
+    <section className="w-full min-h-[1200px] md:flex justify-center items-center bg-white">
+      <div className="flex flex-col justify-evenly mb-100 md:flex-row max-w-[1600px] md:w-full pt-40 px-14  md:justify-center items-center  md:gap-20">
+        <div className="w-full text-center md:hidden">
+          <h1 className="w-[780px] text-3xl text-left font-black mb-10">
             MENU STORY
-            <span className="inline-block w-2 h-2 bg-red-500 ml-1 rounded-full align-middle" />
+            <span className="inline-block w-3 h-3 bg-red-500 ml-1 align-middle" />
           </h1>
 
-          <ul className="flex justify-center gap-6 text-sm font-semibold mb-3">
+          <ul className="flex gap-6 text-sm font-bold mb-10">
             {(["coffee", "dessert", "deli"] as const).map((i) => (
               <li key={i}>
                 <button
@@ -80,13 +80,9 @@ const Sectiontwo = () => {
               </li>
             ))}
           </ul>
-
-          <p className="text-xs md: bg-gray-100 h-15 flex justify-center items-center text-gray-500 font-medium mb: max-w-[500px]">
-            {categoryDescriptions[category].description}
-          </p>
         </div>
 
-        <div className="hidden md:block w-[800px] sticky top-20 self-start z-10 ">
+        <div className="hidden md:block w-[800px] self-start z-10 ">
           <h1 className="text-5xl md:text-8xl font-extrabold leading-none mb-8 relative after:content-[''] after:inline-block after:w-4 after:h-4 after:bg-red-500 after:ml-3">
             MENU STORY
           </h1>
@@ -120,18 +116,27 @@ const Sectiontwo = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center w-full">
+          <p className="flex flex-col text-xs max-w-[500px] w-full text-center md: bg-gray-100 h-15 md:hidden justify-center items-center text-gray-500">
+            {categoryDescriptions[category].description}
+            <span className="text-xl">
+              {categoryDescriptions[category].title}
+            </span>
+          </p>
+
           <Swiper
+            observer={true}
+            observeParents={true}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             modules={[Navigation, Controller]}
-            className="w-full max-w-[500px] h-[300px] md:h-[450px]"
+            className="w-full max-w-[500px] h-[300px] md:h-full object-cover"
           >
             {currentImages.map((i, v) => (
               <SwiperSlide key={v}>
                 <img
                   src={ImageMap[i]}
                   alt={imageNames[i]}
-                  className="w-full h-full object-cover"
+                  className="w-full max-w-[500px] h-[300px] md:h-full object-cover"
                 />
               </SwiperSlide>
             ))}

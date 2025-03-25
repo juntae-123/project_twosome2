@@ -1,15 +1,20 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 "use client";
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+"use client";
+>>>>>>> PJT
 =======
 import BrandPage from "@/HB/components/pageBrand/page";
 import PageDel from "@/HB/components/pageDel/page";
 import PageDesert from "@/HB/components/pageDesert/page";
 import Pagevision from "@/HB/components/pageIntro/page";
 import PageStory from "@/HB/components/pageMenu/page";
+<<<<<<< HEAD
 import PageNotice from "@/HB/components/pageNotice/page";
 
 import Link from "next/link";
@@ -59,6 +64,45 @@ import SupportSection from "@/ES/Main/MainSectionSupport/page";
 //   explanation: string;
 //   imgurl: string;
 // }
+=======
+import NoticeInpPage from "@/HB/components/pageNotice/[id]/page";
+import PageNotice from "@/HB/components/pageNotice/page";
+>>>>>>> origin/my-LHB
+
+<<<<<<< HEAD
+import React, { useEffect, useState } from "react";
+import Pagemain from "@/HG/components/Pagemain";
+import AdminPage from "./admin/admin";
+import LoginPage from "./login/LoginPage";
+import PageDesert from "@/HB/components/pageDesert/page";
+import Sectiontwo from "@/HG/sections/Sectiontwo";
+
+interface MenuItem {
+  id: string;
+  ename: string;
+  pricename: string;
+  explanation: string;
+  imgurl: string;
+}
+
+export default function Home() {
+<<<<<<< HEAD
+  return (
+    <>
+      <div>
+        {/* <AdminPage />
+        <LoginPage></LoginPage> */}
+        <Sectiontwo />
+      </div>
+
+      <>
+        {/* <Pagemain /> */}
+        {/* <PageDesert></PageDesert> */}
+      </>
+    </>
+=======
+import Pagemain from "@/app/HG/components/Pagemain";
+>>>>>>> PJT
 
 >>>>>>> 9bb6444b564a39338100d1e75f5bf77560e4d6f9
 export default function Home() {
@@ -88,11 +132,13 @@ export default function Home() {
 >>>>>>> origin/ES
 =======
     <div>
-      {/* <Pagemain /> */}
-      <SupportSection />
-      <AdminPage />
+      <Pagemain />
     </div>
+<<<<<<< HEAD
 >>>>>>> 9bb6444b564a39338100d1e75f5bf77560e4d6f9
+=======
+>>>>>>> origin/hg
+>>>>>>> PJT
   );
 =======
   return <></>;
@@ -102,5 +148,9 @@ import MainBtmPage from "@/ES/page";
 
 export default function Home() {
   return <MainBtmPage />;
+<<<<<<< HEAD
 >>>>>>> 8ab16e7dd1d8155ded74adf2bb86bc77f7a881ee
+=======
+>>>>>>> origin/main
+>>>>>>> PJT
 }

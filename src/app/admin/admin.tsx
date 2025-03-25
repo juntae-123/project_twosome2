@@ -27,15 +27,13 @@ export default function AdminPage() {
   const [editingMenu, setEditingMenu] = useState<MenuItem | null>(null);
 
   useEffect(() => {
-    console.log("실시간 메뉴 데이터 구독 시작!");
-
     const unsubscribe = subscribeToMenuItems(setMenuItems);
     return () => unsubscribe();
   }, []);
 
-  const handleAddMenuItem = async () => {
+  const AddMenuItem = async () => {
     if (!ename || !pricename || !explanation || !imgurl) {
-      alert("모든 필드를 입력하세요!");
+      alert("모든 필드를 입력하세요");
       return;
     }
     await addMenuItem(ename, pricename, explanation, imgurl, menu);
@@ -46,7 +44,7 @@ export default function AdminPage() {
     setMenu("");
   };
 
-  const handleUpdateMenuItem = async () => {
+  const UpdateMenuItem = async () => {
     if (
       !editingMenu ||
       !ename ||
@@ -81,7 +79,7 @@ export default function AdminPage() {
     setMenu(menu.menu);
   };
 
-  const handleDeleteMenuItem = async (id: string) => {
+  const DeleteMenuItem = async (id: string) => {
     if (confirm("정말 삭제하시겠습니까?")) {
       await deleteMenuItem(id);
     }
@@ -90,7 +88,7 @@ export default function AdminPage() {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">
-        디저트 메뉴 관리자 페이지
+        투썸 관리자 페이지
       </h1>
 
       <div className="bg-white shadow-md rounded-xl p-6 mb-8">
@@ -136,15 +134,15 @@ export default function AdminPage() {
 
           {editingMenu ? (
             <button
-              onClick={handleUpdateMenuItem}
+              onClick={UpdateMenuItem}
               className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded-lg transition"
             >
               수정 완료
             </button>
           ) : (
             <button
-              onClick={handleAddMenuItem}
-              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition"
+              onClick={AddMenuItem}
+              className="bg-blue-300 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition"
             >
               추가
             </button>
@@ -178,7 +176,7 @@ export default function AdminPage() {
                 수정
               </button>
               <button
-                onClick={() => handleDeleteMenuItem(menu.id)}
+                onClick={() => DeleteMenuItem(menu.id)}
                 className="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-lg text-sm"
               >
                 삭제
