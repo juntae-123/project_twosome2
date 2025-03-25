@@ -1,15 +1,9 @@
 import CoffeeCard from "../subComponents/coffeeCard";
-import { coffeeData } from "../subComponents/menuData";
+import { coffeeData } from "../data/menuData";
 import SgCoffee from "../subComponents/sgCoffee";
 import StoryText from "../subComponents/storyText";
 import Title from "../subComponents/title";
-type StoryProps = {
-  title: string;
-  intro: string;
-  explanation: string;
-  img: string;
-  main: string;
-};
+
 const PageStory = () => {
   return (
     <>

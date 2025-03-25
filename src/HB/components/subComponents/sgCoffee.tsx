@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // "use client";
 // import { TwosomeTwColors, TwosomeTwFontSizes } from "@/common/tailstyles";
 // import SgCoffeeCard from "./sgCoffeeCard";
@@ -6,6 +7,13 @@
 // import deliMenu from "./delimenu";
 // import React, { useEffect, useState } from "react";
 // import { fetchMenuItems } from "@/firebase/firestore";
+=======
+"use client";
+import { TwosomeTwColors, TwosomeTwFontSizes } from "@/common/tailstyles";
+import SgCoffeeCard from "./sgCoffeeCard";
+import React, { useEffect, useState } from "react";
+import { fetchMenuItems } from "@/firebase/firestore";
+>>>>>>> origin/my-LHB
 
 // type menuprops = {
 //   title: string;
