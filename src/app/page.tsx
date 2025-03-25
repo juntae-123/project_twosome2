@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 "use client";
 =======
 import BrandPage from "@/HB/components/pageBrand/page";
@@ -54,4 +55,10 @@ export default function Home() {
 =======
   return <></>;
 >>>>>>> origin/my-LHB
+=======
+import MainBtmPage from "@/ES/page";
+
+export default function Home() {
+  return <MainBtmPage />;
+>>>>>>> origin/main
 }

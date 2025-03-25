@@ -4,12 +4,14 @@ import { TwosomeTwColors } from "@/common/tailstyles";
 
 const SupportSection = () => {
   return (
-    <div
-      className={`relative w-[100vw] h-[100vh] bg-white ${TwosomeTwColors["color-black"]}`}
+    <section
+      className={`relative w-full h-[100vh] py-[100px] bg-white ${TwosomeTwColors["color-black"]} overflow-hidden max-md:h-[719px] max-md:py-[80px] max-md:px-[32px]`}
     >
-      <SupportTitle />
-      <SupportSwiper />
-    </div>
+      <div className="w-full max-w-[1312px] h-full mx-auto max-md:max-w-[366px]">
+        <SupportTitle />
+        <SupportSwiper />
+      </div>
+    </section>
   );
 };
 

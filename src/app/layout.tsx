@@ -50,6 +50,7 @@ export default function RootLayout({
         </header>
 
         {children}
+<<<<<<< HEAD
 
         <Sectionone img="..." />
         <Sectiontwo />
@@ -65,6 +66,9 @@ export default function RootLayout({
           <Footer />
         </div>
 >>>>>>> origin/hg
+=======
+        <Footer />
+>>>>>>> origin/main
       </body>
     </html>
   );
