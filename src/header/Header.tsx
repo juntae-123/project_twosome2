@@ -10,36 +10,51 @@ type HeaderProps = {
 
 const Header = ({ button }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    const updateState = () => {
+      setIsScrolled(window.scrollY > 100);
+      setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    updateState(); // 초기 상태 반영
+    window.addEventListener("scroll", updateState);
+    window.addEventListener("resize", updateState);
+
+    return () => {
+      window.removeEventListener("scroll", updateState);
+      window.removeEventListener("resize", updateState);
+    };
   }, []);
+
+  const logoSrc =
+    isScrolled && windowWidth >= 768
+      ? "https://www.twosome.co.kr/resources/images/common/logo_black_.svg"
+      : "https://www.twosome.co.kr/resources/images/common/logo_white_.svg";
+
+  const logoSrc2 =
+    isScrolled && windowWidth >= 768
+      ? "https://www.twosome.co.kr/resources/images/icon/ico_24_allmenu_black.svg"
+      : "https://www.twosome.co.kr/resources/images/icon/ico_24_allmenu_white.svg";
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full px-10 transition-colors duration-300 ${
-        isScrolled ? "text-black" : "text-white"
-      }`}
+      className={`${
+        isScrolled && windowWidth <= 768 ? "bg-black" : "bg-none"
+      }   fixed top-0 left-0 z-50 w-full px-10 transition-colors duration-300 
+      ${isScrolled ? "md:text-black text-white" : "text-white"}  `}
     >
       <div className="flex items-center justify-between h-20">
         <a href="https://www.twosome.co.kr/main.do">
           <img
-            className="h-[30px] w-[216px] transition duration-300"
-            src={
-              isScrolled
-                ? "https://www.twosome.co.kr/resources/images/common/logo_black_.svg"
-                : "https://www.twosome.co.kr/resources/images/common/logo_white_.svg"
-            }
+            className="h-[30px] w-40  md:w-50 transition duration-300"
+            src={logoSrc}
             alt="투썸 로고"
           />
         </a>
 
-        <ul className="flex hidden gap-10 whitespace-nowrap text-lg font-bold 2xl:flex ">
+        <ul className="flex  hidden  gap-10 whitespace-nowrap text-lg font-bold 2xl:flex ">
           <Link href="/HB/componets/pageIntro">투썸플레이스 소개</Link>
           <Link href="/HB/componets/pageMenu">메뉴이야기</Link>
           <Link href="/HB/componets/pageBrand">브랜드 지원</Link>
@@ -51,15 +66,11 @@ const Header = ({ button }: HeaderProps) => {
         </ul>
 
         <div className="flex gap-10 items-center">
-          <button className="border rounded-3xl px-8 py-1  transition-colors duration-300">
+          <button className="border rounded-3xl px-4 py-0 md:px-8 md:py-1 transition-colors duration-300">
             English
           </button>
           <button>
-            <img
-              className="h-6 w-6 mr-3"
-              src={ImageMap[button]}
-              alt="메뉴 버튼"
-            />
+            <img className="h-6 w-6 mr-3" src={logoSrc2} alt="메뉴 버튼" />
           </button>
         </div>
       </div>
