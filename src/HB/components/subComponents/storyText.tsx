@@ -11,7 +11,7 @@ type StoryProps = {
 const StoryText = ({ title, intro, explanation, img }: StoryProps) => {
   return (
     <>
-      <article className=" flex flex-col  md:flex-row md: max-w-[1215px] justify-between  mb-14 ">
+      <article className=" flex flex-col mt-20 mb-14  md:flex-row md: max-w-[1215px] justify-between ">
         <div className=" flex-[1_1_48%] pr-0 md:pr-36 items-center">
           <h1 className={`${TwosomeTwFontSizes["fontSize-56px"]}  font-black `}>
             {title}
