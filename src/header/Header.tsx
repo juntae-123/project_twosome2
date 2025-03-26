@@ -1,6 +1,6 @@
 "use client";
 
-import { Imagegather, ImageMap } from "@/common/Image";
+import { Imagegather } from "@/common/Image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
