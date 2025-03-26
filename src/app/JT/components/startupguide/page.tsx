@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { TwosomeTwColors } from "@/common/tailstyles";
 
