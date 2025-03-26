@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.20.6",
     "@react-icons/all-files": "^4.1.0",
     "@studio-freight/lenis": "^1.0.42",
     "firebase": "^11.4.0",

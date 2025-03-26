@@ -1,6 +1,7 @@
 import { GoArrowRight } from "react-icons/go";
 import "../../supportSwiper.css";
 import { TwosomeTwFontSizes } from "@/common/tailstyles";
+import Link from "next/link";
 
 export type SwiperSlideContentsProps = {
   mainImage: string;
@@ -29,11 +30,13 @@ const SwiperSlideContents = ({
           alt=""
         />
         <div className="flex items-center ">
-          <strong
-            className={`${TwosomeTwFontSizes["fontSize-32px"]} underline mr-[8px] max-md:text-2xl`}
-          >
-            {title}
-          </strong>
+          <Link href="./HB/pages/pageBrand">
+            <strong
+              className={`${TwosomeTwFontSizes["fontSize-32px"]} underline mr-[8px] max-md:text-2xl`}
+            >
+              {title}
+            </strong>
+          </Link>
           <GoArrowRight className="w-[24px] h-[25px]" />
         </div>
         <p

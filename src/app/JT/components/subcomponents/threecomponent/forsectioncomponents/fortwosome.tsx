@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -171,7 +171,7 @@ const slides = [
 const TwosomeSwiper = () => {
   return (
     <section style={{ height: "700px" }} className=" bg-gray-100">
-      <div className="max-w-[1312px] mx-auto mb-30">
+      <div className="max-w-[1312px] mx-auto mb-10">
         <Swiper
           modules={[Pagination]}
           spaceBetween={50}
@@ -223,10 +223,10 @@ const TwosomeSwiper = () => {
           ))}
         </Swiper>
       </div>
-      <div className="max-w-[1312px] mx-auto flex justify-between items-center py-6 mb-28">
+      <div className="max-w-[1312px] mx-auto flex justify-between items-center py-6 ">
         <h2 className=" text-xl md:text-3xl font-bold">투썸하트 앱 다운로드</h2>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ">
           <a
             href="https://play.google.com/store/apps/details?id=com.cj.twosome"
             target="_blank"

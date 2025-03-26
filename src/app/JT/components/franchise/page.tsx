@@ -1,7 +1,13 @@
-import { useState } from "react";
-import { TwosomeTwColors } from "@/common/tailstyles";
+import { TwosomeTwColors, TwosomeTwFontSizes } from "@/common/tailstyles";
 
 const navigation = ["홈 ·", "가맹점 창업안내"];
+const menuItems = [
+  "가맹점 개설 안내",
+  "창업설명회",
+  "온라인창업상담신청",
+  "FAQ",
+  "가맹점 전용 금융상품",
+];
 
 const steps = [
   {
@@ -87,7 +93,7 @@ const franchiselist: franchiselistProps[] = [
 ];
 ``;
 const Franchise = () => {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  //   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   return (
     <section className="w-full">

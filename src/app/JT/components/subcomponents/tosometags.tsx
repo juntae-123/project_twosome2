@@ -1,5 +1,5 @@
+import Title from "@/app/HB/pages/subComponents/title";
 import { TwosomeColors, TwosomeFontSizes } from "@/common/styles";
-import { TwosomeTwColors, TwosomeTwFontSizes } from "@/common/tailstyles";
 
 type TextProps = {
   text: string;
@@ -18,45 +18,10 @@ export default function Tosometags() {
   return (
     <section className="w-full">
       <div style={{ maxWidth: "1312px", margin: "0 auto", padding: "0 48px" }}>
-        <ul
-          style={{
-            display: "flex",
-            maxWidth: "1312px",
-            margin: "0 auto",
-            marginBottom: "56px",
-          }}
-        >
-          <li
-            style={{
-              color: TwosomeColors["color-gray"],
-              fontSize: TwosomeFontSizes["fontSize-12px"],
-            }}
-          >
-            {data[0].text}
-          </li>
-          <li
-            className="font-semibold"
-            style={{
-              color: TwosomeColors["color-red"],
-              fontSize: TwosomeFontSizes["fontSize-12px"],
-            }}
-          >
-            {data[2].text}
-          </li>
-        </ul>
-
-        <div>
-          <h1
-            className="text-3xl md:text-5xl lg:text-7xl font-black  "
-            style={{
-              color: TwosomeColors["color-black"],
-              marginBottom: "64px",
-            }}
-          >
-            {data[1].text}
-          </h1>
+        <div className=" -mt-20 md:mt-0">
+          <Title text="투썸플레이스 앱 소개"></Title>
         </div>
-        <div className="flex flex-col lg:flex-row lg:justify-between ">
+        <div className="flex flex-col mt-20   lg:flex-row lg:justify-between ">
           <dl>
             <dt
               className="font-bold  text-2xl md:text-4xl   lg:text-6xl  "
@@ -111,5 +76,3 @@ export default function Tosometags() {
     </section>
   );
 }
-
-Tosometags;

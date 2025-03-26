@@ -1,7 +1,5 @@
-import { useState } from "react";
-import { TwosomeTwColors } from "@/common/tailstyles";
-
-const navigation = ["홈 ·", "가맹점 창업안내"];
+import { TwosomeTwColors, TwosomeTwFontSizes } from "@/common/tailstyles";
+import Title from "../subComponents/title";
 
 const steps = [
   {
@@ -87,36 +85,11 @@ const franchiselist: franchiselistProps[] = [
 ];
 ``;
 const Franchise = () => {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
   return (
     <section className="w-full">
       <section className="max-w-[1312px] mx-auto px-12">
-        <ul className="flex gap-4 text-gray-500 text-sm mb-5">
-          {navigation.map((item, index) => (
-            <li
-              key={index}
-              className={
-                index === 1 ? "text-red-500 font-semibold" : "text-gray-500"
-              }
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <h1 className="text-black   text-3xl md:text-5xl lg:text-7xl  font-bold mb-10">
-          가맹점 창업안내
-        </h1>
-        <ul className="flex lg: text-sm md:text-lg lg:text-xl ">
-          <li className="mr-5 font-bold">{franchiselist[0].name}</li>
-          <li className="mr-5 font-bold">{franchiselist[1].name}</li>
-          <li className="mr-5 font-bold">{franchiselist[2].name}</li>
-          <li className="mr-5 font-bold">{franchiselist[3].name}</li>
-          <li className="mr-5 font-bold">{franchiselist[4].name}</li>
-        </ul>
-        <h2 className="font-bold text-[40px] mt-12">창업절차</h2>
-
+        <Title text="가맹점 창업안내"></Title>
+        <h2 className="font-bold text-[40px] mt-15 md:mt-32">창업절차</h2>
         <div className="grid grid-cols-1  lg:grid-cols-3  gap-4 mt-6">
           {steps.map((step, index) => (
             <div

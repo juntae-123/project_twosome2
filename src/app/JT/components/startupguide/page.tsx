@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TwosomeTwColors, TwosomeTwFontSizes } from "@/common/tailstyles";
+import { TwosomeTwColors } from "@/common/tailstyles";
 
 const navigation = ["홈 ·", "가맹점 창업안내"];
 const menuItems = [

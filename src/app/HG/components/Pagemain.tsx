@@ -2,24 +2,15 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import Lenis from "@studio-freight/lenis";
 
-<<<<<<< HEAD:src/HG/components/Pagemain.tsx
-import Sectiononeswiper from "@/HG/sections/Sectiononeswiper";
-import Sectionthree from "@/HG/sections/Sectionthree";
-import Sectiontwo from "@/HG/sections/Sectiontwo";
-import SupportSection from "@/ES/Main/MainSectionSupport/page";
-import FranchiseSection from "@/ES/Main/MainSectionFranchise/page";
-import NewsSection from "@/ES/Main/MainSectionNews/page";
-
-=======
 import Sectiononeswiper from "@/app/HG/sections/Sectiononeswiper";
 import Sectionthree from "@/app/HG/sections/Sectionthree";
 import Sectiontwo from "@/app/HG/sections/Sectiontwo";
 import SupportSection from "@/app/ES/Main/MainSectionSupport/page";
 import FranchiseSection from "@/app/ES/Main/MainSectionFranchise/page";
 import NewsSection from "@/app/ES/Main/MainSectionNews/page";
->>>>>>> origin/hg:src/app/HG/components/Pagemain.tsx
+import Footer from "@/app/ES/Footer/page";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const PageMain = () => {
@@ -138,6 +129,18 @@ const PageMain = () => {
         className="h-screen"
       >
         <NewsSection />
+      </section>
+
+      <section
+        id="section7"
+        ref={(el) => {
+          if (el) sectionRefs.current[6] = el;
+        }}
+        className="h-[578px]"
+      >
+        <footer>
+          <Footer></Footer>
+        </footer>
       </section>
     </main>
   );

@@ -6,13 +6,23 @@ import { Navigation, Controller } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ImagegatherTwo, ImageMap, imageNames } from "@/common/Image";
+import Link from "next/link";
 
 const Sectiontwo = () => {
   const [category, setCategory] = useState<"coffee" | "dessert" | "deli">(
     "coffee"
   );
+
+  console.log(category);
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<any>(null);
+
+  const option =
+    category == "coffee"
+      ? "/HB/pages/pageMenu"
+      : category == "dessert"
+      ? "/HB/pages/pageDesert"
+      : "/HB/pages/pageDel";
 
   const categoryDescriptions = {
     coffee: {
@@ -133,11 +143,13 @@ const Sectiontwo = () => {
           >
             {currentImages.map((i, v) => (
               <SwiperSlide key={v}>
-                <img
-                  src={ImageMap[i]}
-                  alt={imageNames[i]}
-                  className="w-full max-w-[500px] h-[300px] md:h-full object-cover"
-                />
+                <Link href={option}>
+                  <img
+                    src={ImageMap[i]}
+                    alt={imageNames[i]}
+                    className="w-full max-w-[500px] h-[300px] md:h-full object-cover"
+                  />
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

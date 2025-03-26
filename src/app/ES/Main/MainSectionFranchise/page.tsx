@@ -38,33 +38,8 @@ const FranchiseSection = () => {
         <div
           className={`mt-6 flex gap-4 ${TwosomeTwFontSizes["fontSize-20px"]} font-semibold`}
         >
-<<<<<<< HEAD:src/app/ES/Main/MainSectionFranchise/page.tsx
-          <button className="relative group border-2 border-black px-6 py-3 bg-white flex items-center gap-4 overflow-hidden max-md:text-sm">
-            <span
-              className="absolute inset-0 bg-black w-0 group-hover:w-full transition-all duration-500 ease-in-out"
-              aria-hidden="true"
-            ></span>
-
-            <span className="relative z-10 text-black group-hover:text-white transition-colors duration-500">
-              창업안내 바로가기
-            </span>
-            <GoArrowRight className="relative z-10 max-md:hidden group-hover:text-white transition-colors duration-500" />
-          </button>
-          <button className="relative group border-2 border-black px-6 py-3 bg-white flex items-center gap-4 overflow-hidden max-md:text-sm">
-            <span
-              className="absolute inset-0 bg-black w-0 group-hover:w-full transition-all duration-500 ease-in-out"
-              aria-hidden="true"
-            ></span>
-
-            <span className="relative z-10 text-black group-hover:text-white transition-colors duration-500">
-              가맹상담 신청
-            </span>
-            <GoArrowRight className="relative z-10 max-md:hidden group-hover:text-white transition-colors duration-500" />
-          </button>
-=======
           <FranchiseButton label="창업안내 바로가기" duration={300} />
           <FranchiseButton label="가맹상담 신청" duration={500} />
->>>>>>> origin/main:src/ES/Main/MainSectionFranchise/page.tsx
         </div>
       </div>
     </section>

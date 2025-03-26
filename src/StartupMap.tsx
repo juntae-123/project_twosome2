@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { db } from "../firebaseConfig";
+
 import { collection, getDocs } from "firebase/firestore";
+import { db } from "./app/firebase/firebaseConfig";
 
 interface Location {
   id: string;
